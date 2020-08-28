@@ -5,8 +5,94 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POS_and_Inventory_Management_System"
         mc:Ignorable="d"
-        Title="Dashboard" Height="600" Width="1200" ResizeMode="NoResize" WindowStyle="None">
+        Title="Dashboard" Height="800" Width="1200" ResizeMode="NoResize" WindowStyle="None">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel  Background="#FF343434">
+            <Grid Height="800">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.25*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Grid.Column="0">
+                    <Image x:Name="userImage" Margin="0,20,0,0" HorizontalAlignment="Center" Width="130" Height="130" Grid.Row="0" Grid.Column="0" Source="Assets/noImage.png"></Image>
+                    <Label x:Name="usernameDisplay" Content="Username" FontSize="23" HorizontalAlignment="Center" FontWeight="SemiBold" Margin="142,0" Foreground="PaleVioletRed"/>
+                    <Label x:Name="roleDisplay" Content="Administrator" FontSize="20" HorizontalAlignment="Center" Foreground="LightGray"/>
+
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left">
+
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,10,0,0">
+                        <Image Source="Assets/noImage.png" Width="30" Height="30" />
+                        <Button Margin="15,0,0,0" Width="200" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Left" Content="Dashboard" Background="Transparent" BorderThickness="0" Foreground="#FFD4D4D4" >
+                        </Button>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="20,15,0,0">
+                        <Image Source="Assets/noImage.png" Width="30" Height="30" />
+                        <Button Margin="15,0,0,0" Width="200" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Left" Content="Manage Sales" Background="Transparent" BorderThickness="0" Foreground="#FFD4D4D4" >
+                        </Button>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"  Margin="20,15,0,0">
+                        <Image Source="Assets/noImage.png" Width="30" Height="30" />
+                        <Button Margin="15,0,0,0" Width="200" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Left" Content="Manages Product" Background="Transparent" BorderThickness="0" Foreground="#FFD4D4D4" >
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"  Margin="20,15,0,0">
+                        <Image Source="Assets/noImage.png" Width="30" Height="30" />
+                        <Button Margin="15,0,0,0" Width="200" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Left" Content="Manage Category" Background="Transparent" BorderThickness="0" Foreground="#FFD4D4D4" >
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"  Margin="20,15,0,0">
+                        <Image Source="Assets/noImage.png" Width="30" Height="30" />
+                        <Button Margin="15,0,0,0" Width="200" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Left" Content="Manage Brand" Background="Transparent" BorderThickness="0" Foreground="#FFD4D4D4" >
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"  Margin="20,15,0,0">
+                        <Image Source="Assets/noImage.png" Width="30" Height="30" />
+                        <Button Margin="15,0,0,0" Width="200" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Left" Content="Records" Background="Transparent" BorderThickness="0" Foreground="#FFD4D4D4" >
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"  Margin="20,15,0,0">
+                        <Image Source="Assets/noImage.png" Width="30" Height="30" />
+                        <Button Margin="15,0,0,0" Width="200" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Left" Content="System Settings" Background="Transparent" BorderThickness="0" Foreground="#FFD4D4D4" >
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"  Margin="20,15,0,0">
+                        <Image Source="Assets/noImage.png" Width="30" Height="30" />
+                        <Button Margin="15,0,0,0" Width="200" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Left" Content="User Settins" Background="Transparent" BorderThickness="0" Foreground="#FFD4D4D4" >
+                        </Button>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal"  VerticalAlignment="Bottom" Margin="20,150,0,0">
+                        <Image Source="Assets/noImage.png" Width="30" Height="30" />
+                        <Button Margin="15,0,0,0" Width="200" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Left" Content="Logout" Background="Transparent" BorderThickness="0" Foreground="#FFD4D4D4" >
+                        </Button>
+                    </StackPanel>
+
+
+                </StackPanel>
+
+               
+
+            </Grid>
+          
+
+
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="2" Background="#FFF0EFEE">
+
+        </StackPanel>
+
     </Grid>
 </Window>

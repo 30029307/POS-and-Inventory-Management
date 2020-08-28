@@ -23,6 +23,7 @@ namespace POS_and_Inventory_Management_System
         public Dashboard()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
     }
 }
