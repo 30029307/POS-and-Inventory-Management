@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace POS_and_Inventory_Management_System
 {
@@ -19,10 +20,17 @@ namespace POS_and_Inventory_Management_System
     /// </summary>
     public partial class Login : Window
     {
+        SqlConnection cn;
+        SqlCommand cm = new SqlCommand();
+        DBConnection dbCon = new DBConnection();
+
         public Login()
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            cn = new SqlConnection(dbCon.Connection());
+            
+           
         }
 
         private void userNameTextBox_IsMouseCapturedChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -37,10 +45,27 @@ namespace POS_and_Inventory_Management_System
 
         private void loginButton_Click(object sender, RoutedEventArgs e)
         {
-            Dashboard dashBoard = new Dashboard();
-            App.Current.MainWindow = dashBoard;
+            MainPage main = new MainPage();
             this.Close();
-            dashBoard.Show();
+
+            try
+            {
+                cn.Open();
+                main.Show();
+            }
+            catch (Exception ex)
+            {
+                
+                MessageBox.Show(ex.Message.ToString());
+                Login l = new Login();
+                l.Show();
+            }
+           
+        }
+
+        private void loginButton_MouseEnter(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

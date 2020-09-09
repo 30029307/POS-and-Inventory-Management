@@ -65,7 +65,8 @@
 
             </StackPanel>
             <StackPanel Margin="0,20,0,0">
-                <Button x:Name="loginButton" Width="150" Background="#FFECECEC" Click="loginButton_Click"> LOGIN</Button>
+                <Button x:Name="loginButton" Width="150" Background="#FFECECEC" Click="loginButton_Click" Content="Login"  >
+                </Button>
                 
             </StackPanel>
             

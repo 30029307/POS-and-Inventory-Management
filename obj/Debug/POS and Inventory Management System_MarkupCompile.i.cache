@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\30029307\source\repos\POS-and-Inventory-Management\obj\Debug\
+C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\
 POS_and_Inventory_Management_System
 none
 false
 DEBUG;TRACE
-C:\Users\30029307\source\repos\POS-and-Inventory-Management\App.xaml
-2260741743
+C:\Users\Derick\source\repos\POS and Inventory Management System\App.xaml
+4-1256488584
 
-7715944150
-15222109342
-Dashboard.xaml;Login.xaml;
+11-1551352996
+151457884934
+MainPage.xaml;Login.xaml;UserControls\BrandsList.xaml;Windows\ManageBrand.xaml;
 
 True
 
