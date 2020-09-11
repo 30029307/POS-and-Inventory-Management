@@ -45,6 +45,8 @@ C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\MainP
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\MainPage.baml
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\UserControls\BrandsList.g.cs
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\UserControls\BrandsList.baml
-C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\POS and Inventory Management System.csprojAssemblyReference.cache
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windows\ManageBrand.g.cs
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windows\ManageBrand.baml
+C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windows\ManageCategory.g.cs
+C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windows\ManageCategory.baml
+C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\POS and Inventory Management System.csprojAssemblyReference.cache

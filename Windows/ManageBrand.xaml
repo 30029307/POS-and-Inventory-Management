@@ -14,35 +14,39 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Row="0" Grid.Column="0">
 
-            <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
-                <TextBlock x:Name="labelSearchName" Text="Search Brand: " FontSize="20"/>
-                <TextBox x:Name="textBoxSearchName" Width="150" Height="30" Margin="10,0,0,0" TextChanged="textBoxSearchName_TextChanged"/>
-            </StackPanel>
+            <StackPanel x:Name="Controls">
+                <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
+                    <TextBlock x:Name="labelSearchName" Text="Search Brand: " FontSize="20"/>
+                    <TextBox x:Name="textBoxSearchName" Width="150" Height="30" Margin="10,0,0,0" TextChanged="textBoxSearchName_TextChanged"/>
+                </StackPanel>
 
 
-            <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
-                <TextBlock x:Name="labelBrandID" Text="Brand ID: " FontSize="20"/>
-                <TextBlock x:Name="labelBrandIDModify" Width="100" Height="30" Margin="10,0,0,0" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-            </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
+                    <TextBlock x:Name="labelBrandID" Text="Brand ID: " FontSize="20"/>
+                    <TextBlock x:Name="labelBrandIDModify" Width="100" Height="30" Margin="10,0,0,0" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                </StackPanel>
 
 
-            <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
-                <TextBlock x:Name="labelBrandName" Text="Brand Name: " FontSize="20"/>
-                <TextBox x:Name="textBoxBRandName" Width="180" Height="30" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
-                <TextBlock x:Name="labelAddress" Text="Address " FontSize="20" />
-                <TextBox x:Name="textBoxAddress" Width="225" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
-                <TextBlock x:Name="labelContactNumber" Text="Contact: " FontSize="20"/>
-                <TextBox x:Name="textBoxContactNumber"  Width="222" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
-                <TextBlock x:Name="labelEmail" Text="Email: " FontSize="20"/>
-                <TextBox x:Name="textBoxEmail" Width="242" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
-            </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
+                    <TextBlock x:Name="labelBrandName" Text="Brand Name: " FontSize="20"/>
+                    <TextBox x:Name="textBoxBRandName" Width="180" Height="30" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
+                    <TextBlock x:Name="labelAddress" Text="Address " FontSize="20" />
+                    <TextBox x:Name="textBoxAddress" Width="225" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
+                    <TextBlock x:Name="labelContactNumber" Text="Contact: " FontSize="20"/>
+                    <TextBox x:Name="textBoxContactNumber"  Width="222" Height="30" PreviewTextInput="NumberValidation" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
+                    <TextBlock x:Name="labelEmail" Text="Email: " FontSize="20"/>
+                    <TextBox x:Name="textBoxEmail" Width="242" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                </StackPanel>
 
+
+            </StackPanel>
+            
             <Button x:Name="buttonAddBrand" Margin="0,20,0,0" Content="Add Brand" FontSize="20" Width="200" Height="40" Click="buttonAddBrand_Click" />
             <Button x:Name="buttonUpdateBrand" Margin="0,20,0,0" Content="Update" FontSize="20" Width="200" Height="40" IsEnabled="False" Click="buttonUpdateBrand_Click" />
             <Button x:Name="buttonDeleteBrand" Margin="0,20,0,0" Content="Delete" FontSize="20" Width="200" Height="40" IsEnabled="False" Click="buttonDeleteBrand_Click" />
@@ -53,8 +57,6 @@
 
 
         <DataGrid x:Name="dataGridBrand" Grid.Column="1" Cursor="UpArrow" ColumnWidth="*" SelectionChanged="dataGridBrand_SelectionChanged" IsReadOnly="True">
-
-
         </DataGrid>
 
 

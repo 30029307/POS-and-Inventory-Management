@@ -70,6 +70,9 @@
     <Compile Include="Windows\ManageBrand.xaml.cs">
       <DependentUpon>ManageBrand.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ManageCategory.xaml.cs">
+      <DependentUpon>ManageCategory.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -92,6 +95,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\ManageBrand.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ManageCategory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

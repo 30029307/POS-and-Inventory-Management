@@ -31,11 +31,9 @@ namespace POS_and_Inventory_Management_System.Windows
 
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             cn = new SqlConnection(dbCon.Connection());
-           
             try
             {
                 cn.Open();
-               
             }
             catch (Exception)
             {
@@ -57,9 +55,11 @@ namespace POS_and_Inventory_Management_System.Windows
             dt.Load(dr);
             dataGridBrand.ItemsSource = dt.DefaultView;
             
+
         }
 
         private void AddUpdateDelete(string sqlStatement, string state) {
+
 
             string msg = "";
             SqlCommand com = cn.CreateCommand();
@@ -72,36 +72,31 @@ namespace POS_and_Inventory_Management_System.Windows
                     msg = "Data Inserted Successfully!";
                     com.Parameters.Add("Name",SqlDbType.VarChar,50).Value = textBoxBRandName.Text;
                     com.Parameters.Add("Address", SqlDbType.VarChar, 50).Value = textBoxAddress.Text;
-
                     try
+                    {
+                        com.Parameters.Add("Contact", SqlDbType.VarChar, 4).Value = textBoxContactNumber.Text;
+                    }
+                    catch (Exception)
                     {
                         com.Parameters.Add("Contact", SqlDbType.Int, 4).Value = Int32.Parse(textBoxContactNumber.Text);
                     }
-                    catch (Exception)
-                    {                    
-                        MessageBox.Show("Enter a number in the Contact field.");
-                    }
-
-                    com.Parameters.Add("Email", SqlDbType.VarChar, 50).Value = textBoxBRandName.Text;
-                   
+                    com.Parameters.Add("Email", SqlDbType.VarChar, 50).Value = textBoxBRandName.Text;                  
                     break;
                 case "Update":
                     msg = "Data Updated Successfully!";
                     com.Parameters.Add("Name", SqlDbType.VarChar, 50).Value = textBoxBRandName.Text;
                     com.Parameters.Add("Address", SqlDbType.VarChar, 50).Value = textBoxAddress.Text;
-
                     try
                     {
-                        com.Parameters.Add("Contact", SqlDbType.Int, 4).Value = Int32.Parse(textBoxContactNumber.Text);
+                        com.Parameters.Add("Contact", SqlDbType.VarChar, 4).Value = textBoxContactNumber.Text;
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Enter a number in the Contact field.");
-                    }
 
+                        com.Parameters.Add("Contact", SqlDbType.Int, 4).Value = Int32.Parse(textBoxContactNumber.Text);
+                    }
                     com.Parameters.Add("Email", SqlDbType.VarChar, 50).Value = textBoxEmail.Text;
                     com.Parameters.Add("Id", SqlDbType.Int, 4).Value = Int32.Parse(labelBrandIDModify.Text);
-
                     break;
                 case "Delete":
                     msg = "Data Deleted Successfully!";
@@ -148,10 +143,21 @@ namespace POS_and_Inventory_Management_System.Windows
 
         private void buttonAddBrand_Click(object sender, RoutedEventArgs e)
         {
+
             string sql = "INSERT INTO Brand(Name,Address,Contact,Email) VALUES (@Name,@Address,@Contact,@Email)";
-            this.AddUpdateDelete(sql, "Add");
-            this.InitializedButtonState();
-            this.Clear();
+            TextBox[] textBoxArray = {textBoxBRandName,textBoxContactNumber,textBoxAddress,textBoxEmail };
+            if (textBoxArray[0].Text != "" 
+                && textBoxArray[1].Text != "" 
+                && textBoxArray[2].Text != "" 
+                && textBoxArray[3].Text != "")
+            {           
+                this.AddUpdateDelete(sql, "Add");
+                this.InitializedButtonState();
+                this.Clear();
+            }
+            else {
+                MessageBox.Show("Please complete details.");
+            }         
         }
 
         private void buttonUpdateBrand_Click(object sender, RoutedEventArgs e)
@@ -190,17 +196,10 @@ namespace POS_and_Inventory_Management_System.Windows
             buttonUpdateBrand.IsEnabled = false;
             buttonDeleteBrand.IsEnabled = false;
         }
-        private void NumericOnly(System.Object sender, System.Windows.Input.TextCompositionEventArgs e)
+        private void NumberValidation(object sender, TextCompositionEventArgs e)
         {
-            e.Handled = IsTextNumeric(e.Text);
-
-        }
-
-        private static bool IsTextNumeric(string str)
-        {
-            Regex reg = new System.Text.RegularExpressions.Regex("[^0-9]");
-            return reg.IsMatch(str);
-
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
