@@ -19,18 +19,22 @@ namespace POS_and_Inventory_Management_System.Windows
     /// <summary>
     /// Interaction logic for ManageCategory.xaml
     /// </summary>
+    /// 
+
     public partial class ManageCategory : Window
     {
 
         SqlConnection cn;
         DBConnection dbCon = new DBConnection();
         DataTable dt = new DataTable();
+        DataView dv;
 
         public ManageCategory()
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             cn = new SqlConnection(dbCon.Connection());
+            dv = new DataView(dt);
 
             try
             {
@@ -106,13 +110,7 @@ namespace POS_and_Inventory_Management_System.Windows
 
 
 
-        private void textBoxSearchName_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            DataView dv = new DataView(dt);
-
-            dv.RowFilter = string.Format("Type LIKE '%{0}%'", textBoxSearchName.Text);
-            dataGridBrand.ItemsSource = dv;
-        }
+       
 
         private void NumberValidation(object sender, TextCompositionEventArgs e)
         {
@@ -143,6 +141,8 @@ namespace POS_and_Inventory_Management_System.Windows
 
             string sql = "INSERT INTO Category(Name,Type,Unit) VALUES (@Name,@Type,@Unit)";
             TextBox[] textBoxArray = { textBoxCategoryName, textBoxType, textBoxUnit };
+
+
             if (textBoxArray[0].Text != ""
                 && textBoxArray[1].Text != ""
                 && textBoxArray[2].Text != ""
@@ -156,7 +156,6 @@ namespace POS_and_Inventory_Management_System.Windows
             {
                 MessageBox.Show("Please complete details.");
             }
-
         }
 
 
@@ -196,7 +195,7 @@ namespace POS_and_Inventory_Management_System.Windows
 
         private void buttonClear_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Clear();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -207,6 +206,28 @@ namespace POS_and_Inventory_Management_System.Windows
         private void Window_Closed(object sender, EventArgs e)
         {
             cn.Close();
+        }
+
+        private void textBoxSearchName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+
+            dv.RowFilter = string.Format("Name LIKE '%{0}%'", textBoxSearchName.Text);
+            dataGridBrand.ItemsSource = dv;
+        }
+
+        private void textBoxSearchType_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            dv.RowFilter = string.Format("Type LIKE '%{0}%'", textBoxSearchType.Text);
+            dataGridBrand.ItemsSource = dv;
+        }
+
+        private void textBoxSearchUnit_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            dv.RowFilter = string.Format("Unit LIKE '%{0}%'", textBoxSearchUnit.Text);
+            dataGridBrand.ItemsSource = dv;
         }
     }
 }

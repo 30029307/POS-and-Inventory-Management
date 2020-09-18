@@ -42,7 +42,7 @@
 
                     <StackPanel Orientation="Horizontal"  Margin="20,15,0,0">
                         <Image Source="Assets/noImage.png" Width="30" Height="30" />
-                        <Button Margin="15,0,0,0" Width="200" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Left" Content="Manages Product" Background="Transparent" BorderThickness="0" Foreground="#FFD4D4D4" >
+                        <Button Margin="15,0,0,0" Width="200" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Left" Content="Manage Product" Background="Transparent" BorderThickness="0" Foreground="#FFD4D4D4" Click="manageProduct_Click" >
                         </Button>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal"  Margin="20,15,0,0">
@@ -55,6 +55,13 @@
                         <Button x:Name="manageBrandButton" Margin="15,0,0,0" Width="200" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Left" Content="Manage Brand" Background="Transparent" BorderThickness="0" Foreground="#FFD4D4D4" Click="manageBrandButton_Click" >
                         </Button>
                     </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal"  Margin="20,15,0,0">
+                        <Image Source="Assets/noImage.png" Width="30" Height="30" />
+                        <Button x:Name="stockInButton" Margin="15,0,0,0" Width="200" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Left" Content="Stock In" Background="Transparent" BorderThickness="0" Foreground="#FFD4D4D4" Click="manageBrandButton_Click" >
+                        </Button>
+                    </StackPanel>
+                    
                     <StackPanel Orientation="Horizontal"  Margin="20,15,0,0">
                         <Image Source="Assets/noImage.png" Width="30" Height="30" />
                         <Button Margin="15,0,0,0" Width="200" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Left" Content="Records" Background="Transparent" BorderThickness="0" Foreground="#FFD4D4D4" >
@@ -71,7 +78,7 @@
                         </Button>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal"  VerticalAlignment="Bottom" Margin="20,150,0,0">
+                    <StackPanel Orientation="Horizontal"  VerticalAlignment="Bottom" Margin="20,100,0,0">
                         <Image Source="Assets/noImage.png" Width="30" Height="30" />
                         <Button x:Name="logOut" Margin="15,0,0,0" Width="200" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Left" Content="Logout" Background="Transparent" BorderThickness="0" Foreground="#FFD4D4D4" Click="logout_Click" >
                         </Button>

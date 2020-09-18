@@ -30,29 +30,32 @@ namespace POS_and_Inventory_Management_System
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
+
+        private void manageProduct_Click(object sender, RoutedEventArgs e)
+        {
+            ManageProduct manageProductWindow = new ManageProduct();
+            manageProductWindow.Show();
+
+        }
+
+
         private void manageBrandButton_Click(object sender, RoutedEventArgs e)
         {
-           
-
             ManageBrand manageBrandWindow = new ManageBrand();
-
             manageBrandWindow.Show();
-
-
-
         }
 
         private void manageCategory_Click(object sender, RoutedEventArgs e)
         {
             ManageCategory manageCategoryWindow = new ManageCategory();
-
             manageCategoryWindow.Show();
-
         }
 
         private void logout_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
+     
     }
 }

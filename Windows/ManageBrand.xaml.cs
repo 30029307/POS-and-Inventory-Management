@@ -53,8 +53,12 @@ namespace POS_and_Inventory_Management_System.Windows
 
             SqlDataReader dr = com.ExecuteReader();
             dt.Load(dr);
+
+
+          
             dataGridBrand.ItemsSource = dt.DefaultView;
             
+
 
         }
 
@@ -71,30 +75,15 @@ namespace POS_and_Inventory_Management_System.Windows
                 case "Add":
                     msg = "Data Inserted Successfully!";
                     com.Parameters.Add("Name",SqlDbType.VarChar,50).Value = textBoxBRandName.Text;
-                    com.Parameters.Add("Address", SqlDbType.VarChar, 50).Value = textBoxAddress.Text;
-                    try
-                    {
-                        com.Parameters.Add("Contact", SqlDbType.VarChar, 4).Value = textBoxContactNumber.Text;
-                    }
-                    catch (Exception)
-                    {
-                        com.Parameters.Add("Contact", SqlDbType.Int, 4).Value = Int32.Parse(textBoxContactNumber.Text);
-                    }
+                    com.Parameters.Add("Address", SqlDbType.VarChar, 50).Value = textBoxAddress.Text;                 
+                    com.Parameters.Add("Contact", SqlDbType.Int, 4).Value = Int32.Parse(textBoxContactNumber.Text);                
                     com.Parameters.Add("Email", SqlDbType.VarChar, 50).Value = textBoxBRandName.Text;                  
                     break;
                 case "Update":
                     msg = "Data Updated Successfully!";
                     com.Parameters.Add("Name", SqlDbType.VarChar, 50).Value = textBoxBRandName.Text;
-                    com.Parameters.Add("Address", SqlDbType.VarChar, 50).Value = textBoxAddress.Text;
-                    try
-                    {
-                        com.Parameters.Add("Contact", SqlDbType.VarChar, 4).Value = textBoxContactNumber.Text;
-                    }
-                    catch (Exception)
-                    {
-
-                        com.Parameters.Add("Contact", SqlDbType.Int, 4).Value = Int32.Parse(textBoxContactNumber.Text);
-                    }
+                    com.Parameters.Add("Address", SqlDbType.VarChar, 50).Value = textBoxAddress.Text;                                                          
+                    com.Parameters.Add("Contact", SqlDbType.Int, 4).Value = Int32.Parse(textBoxContactNumber.Text);                  
                     com.Parameters.Add("Email", SqlDbType.VarChar, 50).Value = textBoxEmail.Text;
                     com.Parameters.Add("Id", SqlDbType.Int, 4).Value = Int32.Parse(labelBrandIDModify.Text);
                     break;
@@ -127,6 +116,9 @@ namespace POS_and_Inventory_Management_System.Windows
             DataGrid dg = sender as DataGrid;
             DataRowView dr = dg.SelectedItem as DataRowView;
 
+
+            //MessageBox.Show(dr[2].ToString());
+            
             if (dr != null) {
 
                 labelBrandIDModify.Text = dr["Id"].ToString();
@@ -145,7 +137,10 @@ namespace POS_and_Inventory_Management_System.Windows
         {
 
             string sql = "INSERT INTO Brand(Name,Address,Contact,Email) VALUES (@Name,@Address,@Contact,@Email)";
+
             TextBox[] textBoxArray = {textBoxBRandName,textBoxContactNumber,textBoxAddress,textBoxEmail };
+            
+            
             if (textBoxArray[0].Text != "" 
                 && textBoxArray[1].Text != "" 
                 && textBoxArray[2].Text != "" 

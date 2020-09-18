@@ -56,7 +56,18 @@
         </StackPanel>
 
 
-        <DataGrid x:Name="dataGridBrand" Grid.Column="1" Cursor="UpArrow" ColumnWidth="*" SelectionChanged="dataGridBrand_SelectionChanged" IsReadOnly="True">
+        <DataGrid  x:Name="dataGridBrand" Grid.Column="1" Cursor="UpArrow" ColumnWidth="*" SelectionChanged="dataGridBrand_SelectionChanged" IsReadOnly="True">
+            <!--<DataGrid.Columns >
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="DELETE" Click="deleteBrandClick"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+            -->
+        
         </DataGrid>
 
 

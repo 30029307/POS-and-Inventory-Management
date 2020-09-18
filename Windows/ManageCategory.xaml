@@ -24,15 +24,16 @@
                     <TextBlock x:Name="labelCategoryIDModify" Width="100" Height="30" Margin="10,0,0,0" FontSize="20" VerticalAlignment="Center" />
                 </StackPanel>
 
-
                 <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
                     <TextBlock x:Name="labelCategoryName" Text="Category Name: " FontSize="20"/>
                     <TextBox x:Name="textBoxCategoryName" Width="180" Height="30" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
                 </StackPanel>
+                
                 <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
                     <TextBlock x:Name="labelType" Text="Type: " FontSize="20" />
                     <TextBox x:Name="textBoxType" Width="225" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
                 </StackPanel>
+                
                 <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
                     <TextBlock x:Name="labelUnit" Text="Unit: " FontSize="20"/>
                     <TextBox x:Name="textBoxUnit"  Width="222" Height="30" PreviewTextInput="NumberValidation" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
@@ -47,11 +48,38 @@
                 <Button x:Name="buttonDeleteCategory" Margin="20,20,0,0" Content="Delete" FontSize="20" Width="200" Height="40" IsEnabled="False" Click="buttonDeleteCategory_Click" />
                 <Button x:Name="buttonClear" Margin="20,20,0,0" Content="Clear" FontSize="20" Width="130" Height="40" IsEnabled="True" Click="buttonClear_Click" />
 
+
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,30,0,20">
-                <TextBlock x:Name="labelSearchName" Text="Search Category: " FontSize="20"/>
-                <TextBox x:Name="textBoxSearchName" Width="150" Height="30" Margin="10,0,0,0" TextChanged="textBoxSearchName_TextChanged"/>
+
+
+            <StackPanel  Orientation="Vertical">
+
+                <TextBlock x:Name="label" Text="Search By: " FontSize="30" FontWeight="DemiBold" Margin="0,20,0,0" HorizontalAlignment="Center"/>
+
+
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center">
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,20">
+                        <TextBlock x:Name="labelSearchName" Text="Name: " FontSize="15"/>
+                        <TextBox x:Name="textBoxSearchName" Width="100" Height="20"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="textBoxSearchName_TextChanged"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,20">
+                        <TextBlock x:Name="labelSearchType" Text="Type: " FontSize="15"/>
+                        <TextBox x:Name="textBoxSearchType" Width="100" Height="20"   HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="textBoxSearchType_TextChanged"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,20">
+                        <TextBlock x:Name="labelSearchUnit" Text="Unit: " FontSize="15"/>
+                        <TextBox x:Name="textBoxSearchUnit" Width="100" Height="20"   HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="textBoxSearchUnit_TextChanged"/>
+                    </StackPanel>
+
+
+                </StackPanel>
+                
+                
+
             </StackPanel>
 
             <DataGrid x:Name="dataGridBrand" Grid.Row="0" Width="500" Height="200" Cursor="UpArrow" ColumnWidth="*" SelectionChanged="dataGridBrand_SelectionChanged" IsReadOnly="True">
@@ -61,7 +89,7 @@
         </StackPanel>
 
 
-        
+
 
 
     </Grid>
