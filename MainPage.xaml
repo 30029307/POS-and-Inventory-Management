@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POS_and_Inventory_Management_System"
         mc:Ignorable="d"
-        Title="Dashboard" Height="800" Width="1200" ResizeMode="NoResize" WindowStyle="None">
+        Title="Dashboard" Height="800" Width="1400" ResizeMode="NoResize" WindowStyle="None">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -29,7 +29,7 @@
                 <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left">
 
 
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,10,0,0">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20,10,0,0" >
                         <Image Source="Assets/noImage.png" Width="30" Height="30" />
                         <Button Margin="15,0,0,0" Width="200" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Left" Content="Dashboard" BorderThickness="0" Foreground="#FFD4D4D4" Background="Transparent" />
                     </StackPanel>
@@ -58,7 +58,7 @@
                     
                     <StackPanel Orientation="Horizontal"  Margin="20,15,0,0">
                         <Image Source="Assets/noImage.png" Width="30" Height="30" />
-                        <Button x:Name="stockInButton" Margin="15,0,0,0" Width="200" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Left" Content="Stock In" Background="Transparent" BorderThickness="0" Foreground="#FFD4D4D4" Click="manageBrandButton_Click" >
+                        <Button x:Name="stockInButton" Margin="15,0,0,0" Width="200" FontSize="20" FontWeight="DemiBold" HorizontalContentAlignment="Left" Content="Stock In" Background="Transparent" BorderThickness="0" Foreground="#FFD4D4D4" Click="manageStock_Click" >
                         </Button>
                     </StackPanel>
                     

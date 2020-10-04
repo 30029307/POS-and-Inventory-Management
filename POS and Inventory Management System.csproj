@@ -64,6 +64,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\Brands.cs" />
+    <Compile Include="Classes\StockInProducts.cs" />
+    <Compile Include="Classes\TempStockInProducts.cs" />
     <Compile Include="UserControls\BrandsList.xaml.cs">
       <DependentUpon>BrandsList.xaml</DependentUpon>
     </Compile>
@@ -75,6 +77,12 @@
     </Compile>
     <Compile Include="Windows\ManageProduct.xaml.cs">
       <DependentUpon>ManageProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ManageStock.xaml.cs">
+      <DependentUpon>ManageStock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\POS.xaml.cs">
+      <DependentUpon>POS.xaml</DependentUpon>
     </Compile>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -106,6 +114,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\ManageProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ManageStock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\POS.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

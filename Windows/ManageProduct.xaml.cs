@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace POS_and_Inventory_Management_System.Windows
 {
@@ -26,11 +27,12 @@ namespace POS_and_Inventory_Management_System.Windows
        
         SqlDataReader dr;
         DataTable dt = new DataTable();
-        DataView dv;
+    
 
-        string BID, CID,PCode;
+        string BID, CID;
 
         List<string> PCodeList;
+
        
 
         public ManageProduct()
@@ -41,10 +43,10 @@ namespace POS_and_Inventory_Management_System.Windows
 
             cn.Open();
 
-
-            LoadCategory();
             LoadBrand();
 
+            LoadCategory();
+          
 
         }
 
@@ -103,7 +105,15 @@ namespace POS_and_Inventory_Management_System.Windows
                 com.Parameters.Add("PDesc", SqlDbType.VarChar, 255).Value = textBoxDesc.Text;
                 com.Parameters.Add("BrandId", SqlDbType.Int, 4).Value = GetBrandID();
                 com.Parameters.Add("CategoryId", SqlDbType.Int, 4).Value = GetCategoryID();
-                com.Parameters.Add("Price", SqlDbType.Decimal, 9).Value = Decimal.Parse(textBoxPrice.Text);
+                try
+                {
+                    com.Parameters.Add("Price", SqlDbType.Decimal, 9).Value = Decimal.Parse(textBoxPrice.Text);
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("(Price) : Please input a valid decimal value.");
+                }
                 com.Parameters.Add("Qty", SqlDbType.Int, 4).Value = Int32.Parse(textBoxQty.Text);
 
                 if (state == "Add") msg = "Data Inserted Successfully";
@@ -291,8 +301,15 @@ namespace POS_and_Inventory_Management_System.Windows
             comboBoxBrand.Text = null;
             comboBoxCategory.Text = null;
             textBoxProductCode.IsEnabled = true;
-        
+            this.InitializedButtonState();
         }
+
+        private void NumberValidation(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {

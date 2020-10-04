@@ -34,7 +34,7 @@ namespace POS_and_Inventory_Management_System
         private void manageProduct_Click(object sender, RoutedEventArgs e)
         {
             ManageProduct manageProductWindow = new ManageProduct();
-            manageProductWindow.Show();
+            manageProductWindow.ShowDialog();
 
         }
 
@@ -42,13 +42,13 @@ namespace POS_and_Inventory_Management_System
         private void manageBrandButton_Click(object sender, RoutedEventArgs e)
         {
             ManageBrand manageBrandWindow = new ManageBrand();
-            manageBrandWindow.Show();
+            manageBrandWindow.ShowDialog();
         }
 
         private void manageCategory_Click(object sender, RoutedEventArgs e)
         {
             ManageCategory manageCategoryWindow = new ManageCategory();
-            manageCategoryWindow.Show();
+            manageCategoryWindow.ShowDialog();
         }
 
         private void logout_Click(object sender, RoutedEventArgs e)
@@ -56,6 +56,10 @@ namespace POS_and_Inventory_Management_System
             this.Close();
         }
 
-     
+        private void manageStock_Click(object sender, RoutedEventArgs e)
+        {
+            ManageStock manageStockWindow = new ManageStock();
+            manageStockWindow.ShowDialog();
+        }
     }
 }

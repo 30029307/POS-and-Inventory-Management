@@ -51,4 +51,8 @@ C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windo
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windows\ManageCategory.baml
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windows\ManageProduct.g.cs
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windows\ManageProduct.baml
+C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windows\ManageStock.g.cs
+C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windows\ManageStock.baml
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\POS and Inventory Management System.csprojAssemblyReference.cache
+C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windows\POS.g.cs
+C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windows\POS.baml
