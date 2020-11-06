@@ -24,10 +24,18 @@ namespace POS_and_Inventory_Management_System
     /// </summary>
     public partial class MainPage : Window
     {
-        public MainPage()
+
+        Login login;
+        public MainPage(Login l)
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+
+            login = l;
+
+            //usernameDisplay.Content = Username;
+
+
         }
 
 
@@ -37,8 +45,6 @@ namespace POS_and_Inventory_Management_System
             manageProductWindow.ShowDialog();
 
         }
-
-
         private void manageBrandButton_Click(object sender, RoutedEventArgs e)
         {
             ManageBrand manageBrandWindow = new ManageBrand();
@@ -53,13 +59,23 @@ namespace POS_and_Inventory_Management_System
 
         private void logout_Click(object sender, RoutedEventArgs e)
         {
+            //;
             this.Close();
+
+            Login loginPage = new Login();
+            loginPage.ShowDialog();
         }
 
         private void manageStock_Click(object sender, RoutedEventArgs e)
         {
             ManageStock manageStockWindow = new ManageStock();
             manageStockWindow.ShowDialog();
+        }
+
+        private void manageUserButton_Click(object sender, RoutedEventArgs e)
+        {
+            ManageUser manageUserWindow = new ManageUser();
+            manageUserWindow.ShowDialog();
         }
     }
 }

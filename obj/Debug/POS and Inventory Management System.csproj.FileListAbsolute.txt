@@ -33,14 +33,8 @@ C:\Users\30029307\source\repos\POS-and-Inventory-Management\obj\Debug\POS and In
 C:\Users\30029307\source\repos\POS-and-Inventory-Management\obj\Debug\POS and Inventory Management System.csproj.CopyComplete
 C:\Users\30029307\source\repos\POS-and-Inventory-Management\obj\Debug\POS and Inventory Management System.exe
 C:\Users\30029307\source\repos\POS-and-Inventory-Management\obj\Debug\POS and Inventory Management System.pdb
-C:\Users\Derick\source\repos\POS and Inventory Management System\bin\Debug\MaterialDesignColors.dll
-C:\Users\Derick\source\repos\POS and Inventory Management System\bin\Debug\MaterialDesignThemes.Wpf.dll
-C:\Users\Derick\source\repos\POS and Inventory Management System\bin\Debug\MaterialDesignColors.pdb
-C:\Users\Derick\source\repos\POS and Inventory Management System\bin\Debug\MaterialDesignThemes.Wpf.pdb
-C:\Users\Derick\source\repos\POS and Inventory Management System\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Login.g.cs
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Login.baml
-C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\POS and Inventory Management System.csproj.CopyComplete
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\MainPage.g.cs
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\MainPage.baml
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\UserControls\BrandsList.g.cs
@@ -53,6 +47,9 @@ C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windo
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windows\ManageProduct.baml
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windows\ManageStock.g.cs
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windows\ManageStock.baml
-C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\POS and Inventory Management System.csprojAssemblyReference.cache
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windows\POS.g.cs
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windows\POS.baml
+C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windows\ManageUser.g.cs
+C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\Windows\ManageUser.baml
+C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\App.baml
+C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\POS and Inventory Management System.csprojAssemblyReference.cache

@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:POS_and_Inventory_Management_System.Windows"
         mc:Ignorable="d"
         Title="ManageProduct" Height="650" Width="1000" Loaded="Window_Loaded" Closed="Window_Closed">
+    
+    
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -14,6 +17,9 @@
 
         
         <StackPanel Grid.Row="0" Orientation="Vertical">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/POS and Inventory Management System;component/Assets/asia.jpg" Stretch="UniformToFill"/>
+            </StackPanel.Background>
 
             <Label FontSize="40" HorizontalAlignment="Center">Product</Label>
 
@@ -28,27 +34,29 @@
 
                     <StackPanel Orientation="Horizontal " Margin="10,10,0,0" >
                         <TextBlock x:Name="textBlockBarCode" Text="Barcode:" FontSize="16"/>
-                        <TextBox  Margin="50,0,0,0" x:Name="textBoxBarCode" Width="200" Height="25" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center"/>
+                        <TextBox  Margin="45,0,0,0" x:Name="textBoxBarCode" Width="200" Height="25" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal " Margin="10,10,0,0" >
                         <TextBlock x:Name="textBlockBrand" Text="Brand:" FontSize="16"/>
-                        <ComboBox  Margin="66,0,0,0" x:Name="comboBoxBrand" Width="200" Height="25" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center"/>
+                        <ComboBox  Margin="60,0,0,0" x:Name="comboBoxBrand" Width="200" Height="25" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal " Margin="10,10,0,0" >
                         <TextBlock x:Name="textBlockCategory" Text="Category:" FontSize="16"/>
-                        <ComboBox  Margin="43,0,0,0" x:Name="comboBoxCategory" Width="200" Height="25" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center" />
+                        <ComboBox  Margin="40,0,0,0" x:Name="comboBoxCategory" Width="200" Height="25" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center" />
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal " Margin="10,10,0,0" >
                         <TextBlock x:Name="textBlockPrice" Text="Price:" FontSize="16"/>
-                        <TextBox  Margin="73,0,0,0" x:Name="textBoxPrice" Width="200" Height="25" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center"/>
+                        <TextBox  Margin="66,0,0,0" x:Name="textBoxPrice" Width="200" Height="25" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal " Margin="10,10,0,0" >
                         <TextBlock x:Name="textBlockQty" Text="Qty:" FontSize="16"/>
-                        <TextBox  Margin="82,0,0,0" x:Name="textBoxQty" Width="200" Height="25" PreviewTextInput="NumberValidation" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center"/>
+                        <TextBox  Margin="75,0,0,0" x:Name="textBoxQty" Width="200" Height="25" PreviewTextInput="NumberValidation" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center"/>
                     </StackPanel>
+                    <Button x:Name="buttonClear" Margin="0,10,0,0" Content="Clear" FontSize="15" Width="50" Height="40" IsEnabled="True" Click="buttonClear_Click" />
+
 
                 </StackPanel>
 
@@ -61,8 +69,7 @@
                     <Button x:Name="buttonAddProduct"  Margin="0,10,0,0" Content="Add Product" FontSize="15" Width="100" Height="40" Click="buttonAddProduct_Click" />
                     <Button x:Name="buttonUpdateProduct" Margin="0,10,0,0" Content="Update" FontSize="15" Width="100" Height="40" IsEnabled="False" Click="buttonUpdateProduct_Click" />
                     <Button x:Name="buttonDeleteProduct" Margin="0,10,0,0" Content="Delete" FontSize="15" Width="100" Height="40" IsEnabled="False" Click="buttonDeleteProduct_Click" />
-                    <Button x:Name="buttonClear" Margin="0,10,0,0" Content="Clear" FontSize="15" Width="50" Height="40" IsEnabled="True" Click="buttonClear_Click" />
-
+                 
 
                 </StackPanel>
             </StackPanel>
@@ -75,7 +82,7 @@
         </StackPanel>
         
         
-        <StackPanel Grid.Row="1">
+        <StackPanel Grid.Row="1" Background="GhostWhite">
             <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
             
                 <TextBlock Text="PRODUCT LIST" FontSize="18" FontWeight="ExtraBlack" HorizontalAlignment="Left"/>

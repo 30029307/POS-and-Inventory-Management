@@ -5,70 +5,123 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POS_and_Inventory_Management_System.Windows"
         mc:Ignorable="d"
-        Title="ManageBrand" Height="650" Width="1600" Loaded="Window_Loaded" Closed="Window_Closed">
-    <Grid>
+        Title="ManageBrand" Height="750" Width="1400" Loaded="Window_Loaded" Closed="Window_Closed">
+
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="MinHeight" Value="20"/>
+            <Setter Property="MinWidth" Value="250"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border"
+                                CornerRadius="5"
+                                BorderBrush="Gray"
+                                BorderThickness="1"
+                                Background="GhostWhite"
+>
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                Focusable="false"
+                                HorizontalScrollBarVisibility="Hidden"
+                                VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="blue"/>
+                                <Setter Property="Foreground" Value="Gray" />
+                                <Setter Property="FontWeight" Value="Bold" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="true">
+                                <Setter Property="Foreground" Value="Blue" />
+                                <Setter Property="BorderBrush" TargetName="border" Value="Blue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="0,8,0,0"/>
+            <Setter Property="Foreground" Value="#084C61"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+
+
+    </Window.Resources>
+
+
+    <Grid Background="LightGray" >
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.9*"/>
             <ColumnDefinition Width="2*"/>
 
         </Grid.ColumnDefinitions>
+
         <StackPanel Grid.Row="0" Grid.Column="0">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/POS and Inventory Management System;component/Assets/bg1.jpg" Stretch="UniformToFill"/>
+            </StackPanel.Background>
 
-            <StackPanel x:Name="Controls">
-                <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
-                    <TextBlock x:Name="labelSearchName" Text="Search Brand: " FontSize="20"/>
-                    <TextBox x:Name="textBoxSearchName" Width="150" Height="30" Margin="10,0,0,0" TextChanged="textBoxSearchName_TextChanged"/>
+
+            <TextBlock TextDecorations="Underline" Foreground="#177E89" FontWeight="UltraLight" HorizontalAlignment="Right" FontSize="40" Margin="0,8,68.8,0">MANAGE BRAND</TextBlock>
+
+
+
+            <StackPanel x:Name="Controls" >
+
+
+
+                <StackPanel Orientation="Horizontal" Margin="20,50,0,0">
+                    <TextBlock x:Name="labelSearchName" Text="Search Brand: " FontSize="20" Margin="0,8,0,0"/>
+                    <TextBox x:Name="textBoxSearchName"  Margin="10,0,0,0" TextChanged="textBoxSearchName_TextChanged"/>
                 </StackPanel>
 
 
-                <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
+                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
                     <TextBlock x:Name="labelBrandID" Text="Brand ID: " FontSize="20"/>
-                    <TextBlock x:Name="labelBrandIDModify" Width="100" Height="30" Margin="10,0,0,0" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="labelBrandIDModify"  Margin="10,0,0,0" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                 </StackPanel>
 
 
-                <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
+                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
                     <TextBlock x:Name="labelBrandName" Text="Brand Name: " FontSize="20"/>
-                    <TextBox x:Name="textBoxBRandName" Width="180" Height="30" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                    <TextBox x:Name="textBoxBRandName"  Margin="16,0,0,0" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" RenderTransformOrigin="0.608,0.445"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
+                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
                     <TextBlock x:Name="labelAddress" Text="Address " FontSize="20" />
-                    <TextBox x:Name="textBoxAddress" Width="225" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                    <TextBox x:Name="textBoxAddress" Margin="60,0,0,0"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
+                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
                     <TextBlock x:Name="labelContactNumber" Text="Contact: " FontSize="20"/>
-                    <TextBox x:Name="textBoxContactNumber"  Width="222" Height="30" PreviewTextInput="NumberValidation" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                    <TextBox x:Name="textBoxContactNumber" Margin="58,0,0,0"  PreviewTextInput="NumberValidation" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="20,30,0,0">
+                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
                     <TextBlock x:Name="labelEmail" Text="Email: " FontSize="20"/>
-                    <TextBox x:Name="textBoxEmail" Width="242" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                    <TextBox x:Name="textBoxEmail" Margin="79,0,0,0"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
                 </StackPanel>
+
+                <Button x:Name="buttonClear" HorizontalAlignment="Right"  Margin="0,20,30,0" Content="Clear" FontSize="20" Width="70" Height="40" IsEnabled="True" Click="buttonClear_Click" />
 
 
             </StackPanel>
-            
-            <Button x:Name="buttonAddBrand" Margin="0,20,0,0" Content="Add Brand" FontSize="20" Width="200" Height="40" Click="buttonAddBrand_Click" />
-            <Button x:Name="buttonUpdateBrand" Margin="0,20,0,0" Content="Update" FontSize="20" Width="200" Height="40" IsEnabled="False" Click="buttonUpdateBrand_Click" />
-            <Button x:Name="buttonDeleteBrand" Margin="0,20,0,0" Content="Delete" FontSize="20" Width="200" Height="40" IsEnabled="False" Click="buttonDeleteBrand_Click" />
-            <Button x:Name="buttonClear" Margin="0,20,0,0" Content="Clear" FontSize="20" Width="130" Height="40" IsEnabled="True" Click="buttonClear_Click" />
+
+            <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
+                <Button x:Name="buttonAddBrand" Margin="20,0,0,0" Content="Add" FontSize="20" Width="120" Height="40" Click="buttonAddBrand_Click" />
+                <Button x:Name="buttonUpdateBrand" Margin="20,0,0,0" Content="Update" FontSize="20" Width="120" Height="40" IsEnabled="False" Click="buttonUpdateBrand_Click" />
+                <Button x:Name="buttonDeleteBrand" Margin="20,0,0,0" Content="Delete" FontSize="20" Width="120" Height="40" IsEnabled="False" Click="buttonDeleteBrand_Click" />
+
+            </StackPanel>
+
 
 
         </StackPanel>
 
 
-        <DataGrid  x:Name="dataGridBrand" Grid.Column="1" Cursor="UpArrow" ColumnWidth="*" SelectionChanged="dataGridBrand_SelectionChanged" IsReadOnly="True">
-            <!--<DataGrid.Columns >
-                <DataGridTemplateColumn>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Content="DELETE" Click="deleteBrandClick"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-            -->
-        
-        </DataGrid>
+        <DataGrid  x:Name="dataGridBrand" Width="auto" Background="#E6E5E5" Cursor="UpArrow" ColumnWidth="*" SelectionChanged="dataGridBrand_SelectionChanged" IsReadOnly="True" Grid.ColumnSpan="2" Margin="428,0,-0.4,-0.2"/>
 
 
     </Grid>

@@ -61,12 +61,8 @@ namespace POS_and_Inventory_Management_System.Windows
         private void UpdateGridProducts()
         {
             dataGridProduct.ItemsSource = null;
-           
-
             dt.Clear();
-      
-
-            
+          
             SqlCommand com = cn.CreateCommand();
             com.CommandText = "SELECT * FROM Product";
             com.CommandType = CommandType.Text;
@@ -90,10 +86,6 @@ namespace POS_and_Inventory_Management_System.Windows
                 
             }
 
-
-          //  dt.Load(read);
-
-
             dt.Columns.Add("PCode");
             dt.Columns.Add("PDesc");
             dt.Columns.Add("Qty");
@@ -107,12 +99,7 @@ namespace POS_and_Inventory_Management_System.Windows
 
             
             dv = new DataView(dt);
-
-
             dataGridProduct.ItemsSource = dv;
-           
-
-
         }
 
         private void UpdateGridTemporaryProducts()
@@ -132,11 +119,7 @@ namespace POS_and_Inventory_Management_System.Windows
             datePickerDateIssued.SelectedDate = DateTime.Today;
         }
 
-        private void InitializedButton()
-        {
-
-
-        }
+     
 
         private void NumberValidation(object sender, TextCompositionEventArgs e)
         {
@@ -150,9 +133,9 @@ namespace POS_and_Inventory_Management_System.Windows
         {
             this.UpdateGridProducts();
             this.UpdateGridTemporaryProducts();
-            MainPage m = new MainPage();
+           // MainPage m = new MainPage(this);
 
-            m.IsEnabled = false;
+           // m.IsEnabled = false;
         }
 
         private void dataGridProduct_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -259,7 +242,7 @@ namespace POS_and_Inventory_Management_System.Windows
             {
 
 
-                string sql = "Insert INTO Stock(RefCode,PCode,StockInBy,Date,Qty) Values (@TRefCode ,@TPCode,@TStockInBy,@TDateIssued,@TQty) ; " +
+                string sql = "Insert INTO StockIn(RefCode,PCode,StockInBy,Date,Qty) Values (@TRefCode ,@TPCode,@TStockInBy,@TDateIssued,@TQty) ; " +
                              "UPDATE Product SET Qty = Qty + @TQty WHERE PCode = @TPCode ";
                 this.InsertUpdateData(sql);
                 this.ClearStockProducts();

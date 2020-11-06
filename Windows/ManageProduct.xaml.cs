@@ -253,9 +253,9 @@ namespace POS_and_Inventory_Management_System.Windows
 
         private void LoadCategory() {
 
-            SqlCommand com = new SqlCommand();
-            comboBoxCategory.Items.Clear();
-            com = new SqlCommand("select distinct Name  from Category", cn);
+           
+            //comboBoxCategory.Items.Clear();
+            SqlCommand com = new SqlCommand("select distinct Name  from Category", cn);
 
             dr = com.ExecuteReader();
 
@@ -272,10 +272,10 @@ namespace POS_and_Inventory_Management_System.Windows
 
         private void LoadBrand()
         {
-            SqlCommand com = new SqlCommand();
+          
       
-            comboBoxBrand.Items.Clear();
-            com = new SqlCommand("select distinct Name  from Brand", cn);
+          //  comboBoxBrand.Items.Clear();
+           SqlCommand com = new SqlCommand("select distinct Name  from Brand", cn);
 
             dr = com.ExecuteReader();
 

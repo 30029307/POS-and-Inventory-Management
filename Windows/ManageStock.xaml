@@ -14,14 +14,17 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row ="0"  >
-            <StackPanel Background="LightGray" Height="auto" Orientation="Horizontal">
+            <StackPanel Height="auto" Orientation="Horizontal">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="/POS and Inventory Management System;component/Assets/asia.jpg" Stretch="UniformToFill"/>
+                </StackPanel.Background>
 
                 <StackPanel Orientation="Horizontal" >
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  >
-                        <StackPanel Orientation="Vertical" Width="AUTO" Margin="20" >
+                        <StackPanel Orientation="Vertical" Width="AUTO" Margin="90,10,0,0" >
 
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal" >
 
 
                                 <StackPanel Orientation="Vertical" Margin="0,0,0,0">
@@ -33,8 +36,8 @@
                                     <TextBlock Text="Stock In by: "/>
                                     <TextBox x:Name="textBoxStockInBy" Width="130"/>
                                 </StackPanel>
-                                
-                                
+
+
 
 
                             </StackPanel>
@@ -48,14 +51,14 @@
                                     <DatePicker Name="datePickerDateIssued" Width="150" HorizontalAlignment="Left"/>
                                 </StackPanel>
 
-                                
+
 
                                 <StackPanel Orientation="Vertical" Margin="20,0,0,0">
                                     <TextBlock Text="Quantity of items to add: "/>
                                     <TextBox x:Name="textBoxQty" PreviewTextInput="NumberValidation" Width="75" HorizontalAlignment="Left"></TextBox>
                                 </StackPanel>
 
-                                
+
 
                             </StackPanel>
 
@@ -63,14 +66,14 @@
 
                         </StackPanel>
 
-                       
+
 
                     </StackPanel>
 
 
 
 
-                  
+
 
 
                     <StackPanel Orientation="Vertical" Margin="300,10,20,20" >
@@ -98,7 +101,7 @@
 
             <StackPanel >
                 <DataGrid AutoGenerateColumns="True" IsReadOnly="True" Height="auto" x:Name="dataGridProduct" ColumnWidth="*" MouseDoubleClick="dataGridProduct_MouseDoubleClick" >
-                   
+
                 </DataGrid>
             </StackPanel>
 
@@ -106,7 +109,7 @@
 
         <StackPanel Grid.Row="1">
 
-           
+
             <DataGrid x:Name="dataGridTemporaryProduct" Height="280" ColumnWidth="*" MouseDoubleClick="dataGridTemporaryProduct_MouseDoubleClick" IsReadOnly="True" AutoGenerateColumns="False">
                 <DataGrid.Columns>
 
