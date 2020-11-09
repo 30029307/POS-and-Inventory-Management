@@ -16,5 +16,5 @@ C:\Users\Derick\source\repos\POS and Inventory Management System\App.xaml
 13-1505183044
 MainPage.xaml;Login.xaml;UserControls\BrandsList.xaml;Windows\ManageBrand.xaml;Windows\ManageCategory.xaml;Windows\ManageProduct.xaml;Windows\ManageStock.xaml;Windows\ManageUser.xaml;Windows\POS.xaml;
 
-False
+True
 

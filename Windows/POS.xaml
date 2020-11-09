@@ -5,8 +5,117 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POS_and_Inventory_Management_System.Windows"
         mc:Ignorable="d"
-        Title="POS" Height="550" Width="1200" ResizeMode="NoResize" Icon="/POS and Inventory Management System;component/Assets/noImage.png" Visibility="Visible" WindowStartupLocation="CenterScreen">
+        Title="POS" Height="650" Width="1200" ResizeMode="NoResize" Icon="/POS and Inventory Management System;component/Assets/noImage.png" Visibility="Visible" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Closed="Window_Closed">
     <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height=".7*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" >
+            <StackPanel Orientation="Vertical" Width="800" Margin="10,20,0,0" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  x:Name="textBlockSearchItem" Text="Search Item: " FontSize="20"/>
+                    <TextBox x:Name="textBoxSearchItem" Width="auto"/>
+                </StackPanel>
+                <DataGrid x:Name="dataGridLoadProducts" ColumnWidth="*" MouseDoubleClick="dataGridLoadProducts_MouseDoubleClick" IsReadOnly="True"  Height="auto" SelectionChanged="dataGridLoadProducts_SelectionChanged"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Vertical">
+                <Border Margin="20" Height="320" Width="340" BorderBrush="Gray" BorderThickness="2">
+                    <StackPanel Margin="10">
+
+                        <TextBlock Text="Barcode: " FontSize="20" Margin="0,0,0,0"/>
+                        <TextBlock x:Name="textBlockBarcode" Text="" FontSize="20"/>
+
+
+                        <TextBlock Text="Item: " FontSize="20" Margin="0,0,0,0"/>
+                        <TextBlock x:Name="textBlockItemName" Text="" FontSize="20"/>
+
+                        <TextBlock Text="Price: " FontSize="20" Margin="0,10,0,0"/>
+                        <TextBox x:Name="textBoxPrice" TextChanged="textBoxQty_TextChanged" Text="" FontSize="20"/>
+
+                        <TextBlock Text="Quantity: " FontSize="20" Margin="0,10,0,0"/>
+                        <TextBox  x:Name="textBoxQty" Text="" FontSize="20" TextChanged="textBoxQty_TextChanged"/>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                            <TextBlock Text="Total: " FontSize="20" />
+                            <TextBlock x:Name="textBlockTotal" Text=""  FontSize="20"/>
+                            
+                        </StackPanel>
+                        <Button HorizontalAlignment="Right" FontSize="16" Width="120" Height="38" Content="Add to Cart" />
+
+                    </StackPanel>
+
+                   
+                      
+                    
+
+
+                </Border>
+
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Border Height="230" Width="650" BorderBrush="Gray" BorderThickness="2">
+                <StackPanel Orientation="Vertical" Margin="5">
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Text="Transaction No:" FontSize="20"/>
+                        <TextBlock Margin="20,0,0,0" FontSize="20"/>
+
+                        <TextBlock  Margin="30,0,0,0"  Text="Cashier: " FontSize="20"/>
+                        <TextBlock  Margin="20,0,0,0"  FontSize="20"/>
+                    </StackPanel>
+                    <DataGrid/>
+                </StackPanel>
+            </Border>
+
+
+            <StackPanel Margin="20,10,20,20">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Date: " FontSize="20"/>
+                    <DatePicker x:Name="datePickerDateIssued" Margin="120,0,0,0" Width="150"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <TextBlock Text="Discount (%): " FontSize="20"/>
+                    <TextBox  Margin="56,0,0,0" Width="150"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <TextBlock Text="Discounted Price: " FontSize="20"/>
+                    <TextBox Margin="22,0,0,0" Width="150"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <TextBlock Text="Total Amount: " FontSize="20"/>
+                    <TextBox Margin="49,0,0,0" Width="150"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <TextBlock Text="Customer Payment: " FontSize="20"/>
+                    <TextBox Margin="4,0,0,0" Width="150"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <TextBlock Text="Customer Change: " FontSize="20"/>
+                    <TextBox Margin="14,0,0,0" Width="150"/>
+                </StackPanel>
+
+            </StackPanel>
+
+            <StackPanel Margin="20,20,20,20" VerticalAlignment="Top">
+                <Button Width="120" FontSize="20" Content="Checkout"/>
+                <Button Margin="0,20,0,0" Width="120" FontSize="20" Content="Clear Items"/>
+
+                <Button Margin="0,90,0,0" Width="100" FontSize="20" Content="Logout"/>
+            </StackPanel>
+            
+        </StackPanel>
+        
+        
         
     </Grid>
 </Window>

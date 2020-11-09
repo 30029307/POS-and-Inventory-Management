@@ -62,7 +62,7 @@
 
                     <StackPanel Orientation="Horizontal" Margin="20,15,0,0">
                         <Image Source="Assets/noImage.png" Width="30" Height="30" />
-                        <Button Content="Manage Sales"  >
+                        <Button Click="managePOS_Click" Content="Manage Sales"  >
                         </Button>
                     </StackPanel>
 

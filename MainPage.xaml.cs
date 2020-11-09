@@ -77,5 +77,11 @@ namespace POS_and_Inventory_Management_System
             ManageUser manageUserWindow = new ManageUser();
             manageUserWindow.ShowDialog();
         }
+
+        private void managePOS_Click(object sender, RoutedEventArgs e)
+        {
+            POS managePOS = new POS();
+            managePOS.ShowDialog();
+        }
     }
 }
