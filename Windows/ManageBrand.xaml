@@ -67,47 +67,53 @@
             </StackPanel.Background>
 
 
-            <TextBlock TextDecorations="Underline" Foreground="#177E89" FontWeight="UltraLight" HorizontalAlignment="Right" FontSize="40" Margin="0,8,68.8,0">MANAGE BRAND</TextBlock>
+          
+
+            <GroupBox BorderThickness="2" BorderBrush="Gray" Margin="20">
+                <GroupBox.Header>
+                    <TextBlock TextDecorations="Underline" Foreground="#177E89" FontWeight="UltraLight" HorizontalAlignment="Right" FontSize="36" >MANAGE BRAND</TextBlock>
+                </GroupBox.Header>
+                
+                <StackPanel x:Name="Controls" >
 
 
 
-            <StackPanel x:Name="Controls" >
+                    <StackPanel Orientation="Horizontal" Margin="20,50,0,0">
+                        <TextBlock x:Name="labelSearchName" Text="Search Brand: " FontSize="20" Margin="0,8,0,0"/>
+                        <TextBox x:Name="textBoxSearchName"  Margin="10,0,0,0" TextChanged="textBoxSearchName_TextChanged"/>
+                    </StackPanel>
 
 
+                    <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                        <TextBlock x:Name="labelBrandID" Text="Brand ID: " FontSize="20"/>
+                        <TextBlock x:Name="labelBrandIDModify"  Margin="10,0,0,0" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    </StackPanel>
 
-                <StackPanel Orientation="Horizontal" Margin="20,50,0,0">
-                    <TextBlock x:Name="labelSearchName" Text="Search Brand: " FontSize="20" Margin="0,8,0,0"/>
-                    <TextBox x:Name="textBoxSearchName"  Margin="10,0,0,0" TextChanged="textBoxSearchName_TextChanged"/>
+
+                    <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                        <TextBlock x:Name="labelBrandName" Text="Brand Name: " FontSize="20"/>
+                        <TextBox x:Name="textBoxBRandName"  Margin="16,0,0,0" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" RenderTransformOrigin="0.608,0.445"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                        <TextBlock x:Name="labelAddress" Text="Address " FontSize="20" />
+                        <TextBox x:Name="textBoxAddress" Margin="60,0,0,0"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                        <TextBlock x:Name="labelContactNumber" Text="Contact: " FontSize="20"/>
+                        <TextBox x:Name="textBoxContactNumber" Margin="58,0,0,0"  PreviewTextInput="NumberValidation" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                        <TextBlock x:Name="labelEmail" Text="Email: " FontSize="20"/>
+                        <TextBox x:Name="textBoxEmail" Margin="79,0,0,0"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                    </StackPanel>
+
+                    <Button x:Name="buttonClear" HorizontalAlignment="Right"  Margin="0,20,30,0" Content="Clear" FontSize="20" Width="70" Height="40" IsEnabled="True" Click="buttonClear_Click" />
+
+
                 </StackPanel>
 
-
-                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
-                    <TextBlock x:Name="labelBrandID" Text="Brand ID: " FontSize="20"/>
-                    <TextBlock x:Name="labelBrandIDModify"  Margin="10,0,0,0" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                </StackPanel>
-
-
-                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
-                    <TextBlock x:Name="labelBrandName" Text="Brand Name: " FontSize="20"/>
-                    <TextBox x:Name="textBoxBRandName"  Margin="16,0,0,0" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" RenderTransformOrigin="0.608,0.445"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
-                    <TextBlock x:Name="labelAddress" Text="Address " FontSize="20" />
-                    <TextBox x:Name="textBoxAddress" Margin="60,0,0,0"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
-                    <TextBlock x:Name="labelContactNumber" Text="Contact: " FontSize="20"/>
-                    <TextBox x:Name="textBoxContactNumber" Margin="58,0,0,0"  PreviewTextInput="NumberValidation" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
-                    <TextBlock x:Name="labelEmail" Text="Email: " FontSize="20"/>
-                    <TextBox x:Name="textBoxEmail" Margin="79,0,0,0"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
-                </StackPanel>
-
-                <Button x:Name="buttonClear" HorizontalAlignment="Right"  Margin="0,20,30,0" Content="Clear" FontSize="20" Width="70" Height="40" IsEnabled="True" Click="buttonClear_Click" />
-
-
-            </StackPanel>
+            </GroupBox>
+          
 
             <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
                 <Button x:Name="buttonAddBrand" Margin="20,0,0,0" Content="Add" FontSize="20" Width="120" Height="40" Click="buttonAddBrand_Click" />

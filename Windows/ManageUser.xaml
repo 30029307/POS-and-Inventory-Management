@@ -20,9 +20,8 @@
         </Grid.ColumnDefinitions>
 
     
-        <StackPanel Margin="10,10,9.6,10" Grid.Column="0" Grid.ColumnSpan="2">
-            <TextBlock Text="User List" FontSize="20" FontFamily="heveltica" FontWeight="UltraLight" HorizontalAlignment="Center"/>
-            <DataGrid SelectionChanged="dataGridUser_SelectionChanged" x:Name="dataGridUser" Margin="10" Height="300" AutoGenerateColumns="False" IsReadOnly="True">
+        <StackPanel Margin="20" Grid.Column="0" Grid.ColumnSpan="2">
+                 <DataGrid SelectionChanged="dataGridUser_SelectionChanged" x:Name="dataGridUser" Margin="10" Height="300" AutoGenerateColumns="False" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="User ID:" Binding="{Binding UserId}" Width="*" IsReadOnly="True"/>
                     <DataGridTextColumn Header="Username:" Binding="{Binding Username}" Width="*"  IsReadOnly="True"/>
@@ -34,51 +33,64 @@
 
         </StackPanel>
 
-        <StackPanel Grid.Column="2" Margin="20.4,20,19.6,20">
-            <StackPanel Orientation="Horizontal" Margin="10">
-                <TextBlock Text="User ID:" FontSize="18" />
-                <TextBlock x:Name="labelUserId" Margin="25,0,0,0" Text="????" FontSize="18"/>
+
+
+
+        <GroupBox Margin="25" Grid.Column="2" BorderBrush="Gray" BorderThickness="4">
+            <GroupBox.Header>
+                <TextBlock Text="User List" FontSize="20" FontFamily="heveltica" FontWeight="UltraLight" HorizontalAlignment="Center"/>
+
+            </GroupBox.Header>
+            
+            <StackPanel  Margin="2">
+                <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
+                    <TextBlock Text="User ID:" FontSize="18" />
+                    <TextBlock x:Name="labelUserId" Margin="25,0,0,0" Text="????" FontSize="18"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
+                    <TextBlock Text="Full Name:" FontSize="18"/>
+                    <TextBox x:Name="textBoxFullName" Margin="5,0,0,0" Width="180" FontSize="18"/>
+                </StackPanel>
+
+
+                <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
+                    <TextBlock Text="Username:" FontSize="18"/>
+                    <TextBox x:Name="textBoxUserName" Margin="3,0,0,0" Width="180" FontSize="18"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
+                    <TextBlock Text="Password:" FontSize="18"/>
+                    <PasswordBox x:Name="textBoxPassword" Margin="9,0,0,0" Width="180" FontSize="18"/>
+                </StackPanel>
+
+
+                <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
+                    <TextBlock Text="Role:" FontSize="18"/>
+                    <ComboBox x:Name="comboBoxRole" Margin="46,0,0,0" Width="180" FontSize="18">
+
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
+                    <TextBlock Text="Contact:" FontSize="18"/>
+                    <TextBox x:Name="textBoxContact" Margin="22,0,0,0" Width="180" FontSize="18"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10,0,10,10">
+                    <TextBlock Text="Email:" FontSize="18"/>
+                    <TextBox x:Name="textBoxEmail" Margin="38,0,0,0" Width="180" FontSize="18"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <Button x:Name="buttonUpdate" Click="buttonUpdate_Click" Content="Update" Margin="10" Width="80" Height="30"/>
+                    <Button x:Name="buttonNew" Click="buttonNew_Click" Content="New Account" Margin="10" Height="30" Width="80"/>
+                    <Button x:Name="buttonClear" Click="buttonClear_Click" Content="Clear" Margin="10" Height="30" Width="50"/>
+
+                </StackPanel>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="10">
-                <TextBlock Text="Full Name:" FontSize="18"/>
-                <TextBox x:Name="textBoxFullName" Margin="5,0,0,0" Width="180" FontSize="18"/>
-            </StackPanel>
 
-
-            <StackPanel Orientation="Horizontal" Margin="10">
-                <TextBlock Text="Username:" FontSize="18"/>
-                <TextBox x:Name="textBoxUserName" Margin="3,0,0,0" Width="180" FontSize="18"/>
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal" Margin="10">
-                <TextBlock Text="Password:" FontSize="18"/>
-                <PasswordBox x:Name="textBoxPassword" Margin="9,0,0,0" Width="180" FontSize="18"/>
-            </StackPanel>
-
-
-            <StackPanel Orientation="Horizontal" Margin="10">
-                <TextBlock Text="Role:" FontSize="18"/>
-                <ComboBox x:Name="comboBoxRole" Margin="46,0,0,0" Width="180" FontSize="18">
-
-                </ComboBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="10">
-                <TextBlock Text="Contact:" FontSize="18"/>
-                <TextBox x:Name="textBoxContact" Margin="22,0,0,0" Width="180" FontSize="18"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="10">
-                <TextBlock Text="Email:" FontSize="18"/>
-                <TextBox x:Name="textBoxEmail" Margin="38,0,0,0" Width="180" FontSize="18"/>
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
-                <Button x:Name="buttonUpdate" Click="buttonUpdate_Click" Content="Update" Margin="10" Width="80" Height="30"/>
-                <Button x:Name="buttonNew" Click="buttonNew_Click" Content="New Account" Margin="10" Height="30" Width="80"/>
-                <Button x:Name="buttonClear" Click="buttonClear_Click" Content="Clear" Margin="10" Height="30" Width="80"/>
-
-            </StackPanel>
-        </StackPanel>
-
+        </GroupBox>
+        
+       
     </Grid>
 </Window>

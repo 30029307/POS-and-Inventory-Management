@@ -98,29 +98,44 @@
 
             </StackPanel>
 
-            <StackPanel >
-                <DataGrid AutoGenerateColumns="True" IsReadOnly="True" Height="auto" x:Name="dataGridProduct" ColumnWidth="*" MouseDoubleClick="dataGridProduct_MouseDoubleClick" >
 
-                </DataGrid>
-            </StackPanel>
+            <GroupBox BorderThickness="2" BorderBrush="Gray" Margin="10">
+                <GroupBox.Header>
+                    <TextBlock Text="Products" FontSize="20"/>
+                </GroupBox.Header>
+                <StackPanel >
+                    <DataGrid AutoGenerateColumns="True" IsReadOnly="True" Height="auto" x:Name="dataGridProduct" ColumnWidth="*" MouseDoubleClick="dataGridProduct_MouseDoubleClick" >
+
+                    </DataGrid>
+                </StackPanel>
+
+            </GroupBox>
+            
+            
 
         </StackPanel>
 
         <StackPanel Grid.Row="1">
 
+            <GroupBox BorderBrush="Gray" BorderThickness="2" Margin="10">
+                <GroupBox.Header>
+                    <TextBlock Text="Products" FontSize="20" />
+                </GroupBox.Header>
+                <DataGrid x:Name="dataGridTemporaryProduct" Height="250" ColumnWidth="*" MouseDoubleClick="dataGridTemporaryProduct_MouseDoubleClick" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
 
-            <DataGrid x:Name="dataGridTemporaryProduct" Height="280" ColumnWidth="*" MouseDoubleClick="dataGridTemporaryProduct_MouseDoubleClick" IsReadOnly="True" AutoGenerateColumns="False">
-                <DataGrid.Columns>
-
-                    <DataGridTextColumn Header="Reference Code" Width="100" IsReadOnly="True" Binding="{Binding TRefCode }"/>
-                    <DataGridTextColumn Header="Date Issued"  IsReadOnly="True" Width="100" Binding="{Binding TDate }"/>
-                    <DataGridTextColumn Header="Product Desc"  IsReadOnly="True" Binding="{Binding TPDesc }"/>
-                    <DataGridTextColumn Header="Price" Width="50"  IsReadOnly="True" Binding="{Binding TPrice }"/>
-                    <DataGridTextColumn Header="Qty" Width="50"  IsReadOnly="True" Binding="{Binding TQty }"/>
+                        <DataGridTextColumn Header="Reference Code" Width="100" IsReadOnly="True" Binding="{Binding TRefCode }"/>
+                        <DataGridTextColumn Header="Date Issued"  IsReadOnly="True" Width="100" Binding="{Binding TDate }"/>
+                        <DataGridTextColumn Header="Product Desc"  IsReadOnly="True" Binding="{Binding TPDesc }"/>
+                        <DataGridTextColumn Header="Price" Width="50"  IsReadOnly="True" Binding="{Binding TPrice }"/>
+                        <DataGridTextColumn Header="Qty" Width="50"  IsReadOnly="True" Binding="{Binding TQty }"/>
 
 
-                </DataGrid.Columns>
-            </DataGrid>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+            </GroupBox>
+           
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0" Height="AUTO" Width="AUTO">
                 <Button x:Name="buttonConfirm"  Content="Confirm Stocks" Click="buttonConfirm_Click" Margin="00,5,0,0" Width="100" Height="20"/>

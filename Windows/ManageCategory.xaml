@@ -62,7 +62,7 @@
 
         <StackPanel Grid.Row="0">
             <StackPanel.Background>
-                <ImageBrush ImageSource="/POS and Inventory Management System;component/Assets/asia.jpg">
+                <ImageBrush ImageSource="/POS and Inventory Management System;component/Assets/asia.jpg" Stretch="None">
                     <ImageBrush.RelativeTransform>
                         <TransformGroup>
                             <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="2" ScaleY="2"/>
@@ -73,87 +73,95 @@
                     </ImageBrush.RelativeTransform>
                 </ImageBrush>
             </StackPanel.Background>
-            <Label FontSize="40" HorizontalAlignment="Center" Foreground="#FF1E737C">Manage Category</Label>
+           
+            <GroupBox BorderThickness="4" BorderBrush="Gray" Margin="10">
+
+                <GroupBox.Header>
+                    <Label FontSize="40" HorizontalAlignment="Center" Foreground="#FF1E737C">Manage Category</Label>
+
+                </GroupBox.Header>
+                
+                <StackPanel Orientation="Horizontal" Margin="10">
+    
+
+                    <StackPanel  Orientation="Vertical">
+
+                        <TextBlock x:Name="label" Text="Search By: " FontSize="20" FontWeight="UltraLight" Margin="0,20,0,0"  HorizontalAlignment="Center"/>
 
 
-            <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical" Margin="0,10,0,0" HorizontalAlignment="Center">
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,20">
+                                <TextBlock x:Name="labelSearchName" Text="Name: " FontSize="15"/>
+                                <TextBox x:Name="textBoxSearchName" Width="100" Height="20"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="textBoxSearchName_TextChanged"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,20">
+                                <TextBlock x:Name="labelSearchType" Text="Type: " FontSize="15"/>
+                                <TextBox x:Name="textBoxSearchType" Width="100" Height="20"   HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="textBoxSearchType_TextChanged"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,20">
+                                <TextBlock x:Name="labelSearchUnit" Text="Unit: " FontSize="15"/>
+                                <TextBox x:Name="textBoxSearchUnit" Width="100" Height="20"   HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="textBoxSearchUnit_TextChanged"/>
+                            </StackPanel>
 
 
-                <StackPanel  Orientation="Vertical">
-
-                    <TextBlock x:Name="label" Text="Search By: " FontSize="20" FontWeight="UltraLight" Margin="0,20,0,0"  HorizontalAlignment="Center"/>
-
-
-                    <StackPanel Orientation="Vertical" Margin="0,10,0,0" HorizontalAlignment="Center">
-
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,20">
-                            <TextBlock x:Name="labelSearchName" Text="Name: " FontSize="15"/>
-                            <TextBox x:Name="textBoxSearchName" Width="100" Height="20"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="textBoxSearchName_TextChanged"/>
                         </StackPanel>
 
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,20">
-                            <TextBlock x:Name="labelSearchType" Text="Type: " FontSize="15"/>
-                            <TextBox x:Name="textBoxSearchType" Width="100" Height="20"   HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="textBoxSearchType_TextChanged"/>
-                        </StackPanel>
-
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,20">
-                            <TextBlock x:Name="labelSearchUnit" Text="Unit: " FontSize="15"/>
-                            <TextBox x:Name="textBoxSearchUnit" Width="100" Height="20"   HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="textBoxSearchUnit_TextChanged"/>
-                        </StackPanel>
 
 
                     </StackPanel>
 
 
+
+                    <StackPanel HorizontalAlignment="Center" Margin="100,0,0,0">
+
+                        <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                            <TextBlock x:Name="labelCategoryID" Text="Category ID: " FontSize="20"/>
+                            <TextBlock x:Name="labelCategoryIDModify" Width="100" Height="30" Margin="10,0,0,0" FontSize="20" VerticalAlignment="Center" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                            <TextBlock x:Name="labelCategoryName" Text="Category Name: " FontSize="20"/>
+                            <TextBox x:Name="textBoxCategoryName" Width="180" Height="30" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                            <TextBlock x:Name="labelType" Text="Type: " FontSize="20" />
+                            <TextBox x:Name="textBoxType" Width="225" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                            <TextBlock x:Name="labelUnit" Text="Unit: " FontSize="20"/>
+                            <TextBox x:Name="textBoxUnit"  Width="222" Height="30" PreviewTextInput="NumberValidation" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+
+                        <Button x:Name="buttonClear" HorizontalAlignment="Left" Margin="20,10,0,0" Content="Clear" FontSize="15" Width="80" Height="40" IsEnabled="True" Click="buttonClear_Click" />
+
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="80,0,0,0" >
+
+                        <Button x:Name="buttonAddCategory"  Margin="20,20,0,0" Content="Add " FontSize="20" Width="120" Height="40" Click="buttonAddCategory_Click" />
+                        <Button x:Name="buttonUpdateCategory" Margin="20,20,0,0" Content="Update" FontSize="20" Width="120" Height="40" IsEnabled="False" Click="buttonUpdateCategory_Click" />
+                        <Button x:Name="buttonDeleteCategory" Margin="20,20,0,0" Content="Delete" FontSize="20" Width="120" Height="40" IsEnabled="False" Click="buttonDeleteCategory_Click" />
+
+
+                    </StackPanel>
 
                 </StackPanel>
 
 
 
-                <StackPanel HorizontalAlignment="Center" Margin="100,0,0,0">
-
-                    <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
-                        <TextBlock x:Name="labelCategoryID" Text="Category ID: " FontSize="20"/>
-                        <TextBlock x:Name="labelCategoryIDModify" Width="100" Height="30" Margin="10,0,0,0" FontSize="20" VerticalAlignment="Center" />
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
-                        <TextBlock x:Name="labelCategoryName" Text="Category Name: " FontSize="20"/>
-                        <TextBox x:Name="textBoxCategoryName" Width="180" Height="30" TextWrapping="Wrap" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
-                        <TextBlock x:Name="labelType" Text="Type: " FontSize="20" />
-                        <TextBox x:Name="textBoxType" Width="225" Height="30" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
-                        <TextBlock x:Name="labelUnit" Text="Unit: " FontSize="20"/>
-                        <TextBox x:Name="textBoxUnit"  Width="222" Height="30" PreviewTextInput="NumberValidation" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
-                    </StackPanel>
-
-                    <Button x:Name="buttonClear" HorizontalAlignment="Left" Margin="20,10,0,0" Content="Clear" FontSize="15" Width="80" Height="40" IsEnabled="True" Click="buttonClear_Click" />
-
-
-                </StackPanel>
-
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="80,0,0,0" >
-
-                    <Button x:Name="buttonAddCategory"  Margin="20,20,0,0" Content="Add " FontSize="20" Width="120" Height="40" Click="buttonAddCategory_Click" />
-                    <Button x:Name="buttonUpdateCategory" Margin="20,20,0,0" Content="Update" FontSize="20" Width="120" Height="40" IsEnabled="False" Click="buttonUpdateCategory_Click" />
-                    <Button x:Name="buttonDeleteCategory" Margin="20,20,0,0" Content="Delete" FontSize="20" Width="120" Height="40" IsEnabled="False" Click="buttonDeleteCategory_Click" />
-
-
-                </StackPanel>
-
-            </StackPanel>
+            </GroupBox>
+         
 
 
 
 
-
-
-            <DataGrid x:Name="dataGridBrand" Grid.Row="0" Width="auto" Height="auto" Cursor="UpArrow" ColumnWidth="*" Margin="0,50,0,0" SelectionChanged="dataGridBrand_SelectionChanged" IsReadOnly="True">
+            <DataGrid x:Name="dataGridBrand"  Grid.Row="0" Width="auto" Height="auto" Cursor="UpArrow" ColumnWidth="*" Margin="0,0,0,0" SelectionChanged="dataGridBrand_SelectionChanged" IsReadOnly="True">
             </DataGrid>
 
 
