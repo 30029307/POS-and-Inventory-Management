@@ -197,8 +197,6 @@ namespace POS_and_Inventory_Management_System.Windows
             }
 
 
-
-
         }
 
         private void dataGridTemporaryProduct_MouseDoubleClick(object sender, MouseButtonEventArgs e)

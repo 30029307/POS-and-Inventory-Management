@@ -45,7 +45,8 @@
             <Grid Height="800">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1.25*"/>
-                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="1.8*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="0" Grid.Column="0">
@@ -60,53 +61,51 @@
 
                     
 
-                    <StackPanel Orientation="Horizontal" Margin="20,15,0,0">
+                    <StackPanel x:Name="stackPanelPOS" Orientation="Horizontal" Margin="20,15,0,0">
                         <Image Source="Assets/noImage.png" Width="30" Height="30" />
                         <Button Click="managePOS_Click" Content="Manage Sales"  >
                         </Button>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal"  Margin="20,15,0,0">
+                    <StackPanel x:Name="stackPanelProduct" Orientation="Horizontal"  Margin="20,15,0,0">
                         <Image Source="Assets/noImage.png" Width="30" Height="30" />
-                        <Button  Content="Manage Product"  Click="manageProduct_Click" >
+                        <Button x:Name="manageProduct"  Content="Manage Product"  Click="manageProduct_Click" >
                         </Button>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal"  Margin="20,15,0,0">
+                    <StackPanel x:Name="stackPanelCategory" Orientation="Horizontal"  Margin="20,15,0,0">
                         <Image Source="Assets/noImage.png" Width="30" Height="30" />
                         <Button x:Name="manageCategory"   Content="Manage Category" Click="manageCategory_Click" >
                         </Button>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal"  Margin="20,15,0,0">
+                    <StackPanel x:Name="stackPanelBrand" Orientation="Horizontal"  Margin="20,15,0,0">
                         <Image Source="Assets/noImage.png" Width="30" Height="30" />
                         <Button x:Name="manageBrandButton"  Content="Manage Brand" Click="manageBrandButton_Click" >
                         </Button>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal"  Margin="20,15,0,0">
+                    <StackPanel x:Name="stackPanelStock" Orientation="Horizontal"  Margin="20,15,0,0">
                         <Image Source="Assets/noImage.png" Width="30" Height="30" />
                         <Button x:Name="stockInButton"   Content="Stock In"  Click="manageStock_Click" >
                         </Button>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal"  Margin="20,15,0,0">
-                        <Image Source="Assets/noImage.png" Width="30" Height="30" />
-                        <Button  Content="Records" >
-                        </Button>
-                    </StackPanel>
+                   
                  
-                    <StackPanel Orientation="Horizontal"  Margin="20,15,0,0">
+                    <StackPanel x:Name="stackPanelUser" Orientation="Horizontal"  Margin="20,15,0,0">
                         <Image Source="Assets/noImage.png" Width="30" Height="30" />
                         <Button x:Name="manageUserButton"   Content="User Settings"  Click="manageUserButton_Click" >
                         </Button>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal"  VerticalAlignment="Bottom" Margin="20,150,0,0">
-                        <Image Source="Assets/noImage.png" Width="30" Height="30" />
-                        <Button x:Name="logOut" Content="Logout" Foreground="GhostWhite" Click="logout_Click" >
-                        </Button>
-                    </StackPanel>
+                  
 
 
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Orientation="Horizontal"  VerticalAlignment="Top" Margin="20,0,0,0">
+                    <Image Source="Assets/noImage.png" Width="30" Height="30" />
+                    <Button x:Name="logOut" Content="Logout" Foreground="GhostWhite" Click="logout_Click" >
+                    </Button>
                 </StackPanel>
 
 

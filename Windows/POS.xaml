@@ -6,7 +6,20 @@
         xmlns:local="clr-namespace:POS_and_Inventory_Management_System.Windows"
         mc:Ignorable="d"
         Title="POS" Height="650" Width="1200" ResizeMode="NoResize" Icon="/POS and Inventory Management System;component/Assets/noImage.png" Visibility="Visible" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Closed="Window_Closed">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="GhostWhite"/>
+
+        </Style>
+    </Window.Resources>
+    
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFFF4242" Offset="0"/>
+                <GradientStop Color="Silver" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -17,62 +30,80 @@
             <StackPanel Orientation="Vertical" Width="800" Margin="10,20,0,0" >
                 <StackPanel Orientation="Horizontal">
                     <TextBlock  x:Name="textBlockSearchItem" Text="Search Item: " FontSize="20"/>
-                    <TextBox x:Name="textBoxSearchItem" Width="auto"/>
+                    <TextBox x:Name="textBoxSearchItem" Width="200" Height="20" TextChanged="textBoxSearchItem_TextChanged" />
                 </StackPanel>
-                <DataGrid x:Name="dataGridLoadProducts" ColumnWidth="*" MouseDoubleClick="dataGridLoadProducts_MouseDoubleClick" IsReadOnly="True"  Height="auto" SelectionChanged="dataGridLoadProducts_SelectionChanged"/>
+                <DataGrid x:Name="dataGridLoadProducts" ColumnWidth="*"  IsReadOnly="True"  Height="auto" SelectionChanged="dataGridLoadProducts_SelectionChanged"/>
             </StackPanel>
-            
+
             <StackPanel Orientation="Vertical">
-                <Border Margin="20" Height="320" Width="340" BorderBrush="Gray" BorderThickness="2">
+                <GroupBox Margin="20" Height="320" Width="340" BorderBrush="Gray" BorderThickness="2">
+
+                    <GroupBox.Header>
+                        <TextBlock FontSize="20">BERTONG GALIT</TextBlock>
+                    </GroupBox.Header>
+
+
                     <StackPanel Margin="10">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Barcode: " FontSize="20" Margin="0,0,0,0"/>
+                            <TextBlock x:Name="textBlockBarcode" Text="" FontSize="20"/>
 
-                        <TextBlock Text="Barcode: " FontSize="20" Margin="0,0,0,0"/>
-                        <TextBlock x:Name="textBlockBarcode" Text="" FontSize="20"/>
+                            <TextBlock Text="PCode: " FontSize="20" Margin="30,0,0,0"/>
+                            <TextBlock x:Name="textBlockPCode" Text="" FontSize="20"/>
 
 
-                        <TextBlock Text="Item: " FontSize="20" Margin="0,0,0,0"/>
-                        <TextBlock x:Name="textBlockItemName" Text="" FontSize="20"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Item: " FontSize="20" Margin="0,0,0,0"/>
+                            <TextBlock x:Name="textBlockItemName" Text="" FontSize="20"/>
+
+                        </StackPanel>
 
                         <TextBlock Text="Price: " FontSize="20" Margin="0,10,0,0"/>
-                        <TextBox x:Name="textBoxPrice" TextChanged="textBoxQty_TextChanged" Text="" FontSize="20"/>
+                        <TextBox x:Name="textBoxPrice" TextChanged="textBoxQtyPrice_TextChanged" Text="" FontSize="20" PreviewTextInput="NumberValidation"/>
 
                         <TextBlock Text="Quantity: " FontSize="20" Margin="0,10,0,0"/>
-                        <TextBox  x:Name="textBoxQty" Text="" FontSize="20" TextChanged="textBoxQty_TextChanged"/>
+                        <TextBox  x:Name="textBoxQty" Text="" FontSize="20" TextChanged="textBoxQtyPrice_TextChanged" PreviewTextInput="NumberValidation"/>
 
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                             <TextBlock Text="Total: " FontSize="20" />
                             <TextBlock x:Name="textBlockTotal" Text=""  FontSize="20"/>
-                            
+
                         </StackPanel>
-                        <Button HorizontalAlignment="Right" FontSize="16" Width="120" Height="38" Content="Add to Cart" />
+                        <Button x:Name="buttonAddToCart" Click="buttonAddToCart_Click" HorizontalAlignment="Right" FontSize="16" Width="120" Height="38" Content="Add to Cart" />
 
                     </StackPanel>
 
-                   
-                      
-                    
 
-
-                </Border>
+                </GroupBox>
 
             </StackPanel>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
+        <StackPanel Grid.Row="1" Orientation="Horizontal" >
             <Border Height="230" Width="650" BorderBrush="Gray" BorderThickness="2">
                 <StackPanel Orientation="Vertical" Margin="5">
                     <StackPanel Orientation="Horizontal" >
-                        <TextBlock Text="Transaction No:" FontSize="20"/>
-                        <TextBlock Margin="20,0,0,0" FontSize="20"/>
+                        <TextBlock Text="Receipt No:" FontSize="20"/>
+                        <TextBlock x:Name="textBlockReceiptNo"  Text="zxc" Margin="20,0,0,0" FontSize="20"/>
 
                         <TextBlock  Margin="30,0,0,0"  Text="Cashier: " FontSize="20"/>
-                        <TextBlock  Margin="20,0,0,0"  FontSize="20"/>
+                        <TextBlock Margin="20,0,0,0" Name="textBlockCashier"  FontSize="20"/>
                     </StackPanel>
-                    <DataGrid/>
+                    <DataGrid x:Name="dataGridCartItems" Height="280" ColumnWidth="*" MouseDoubleClick="dataGridCartItems_DoubleClick" IsReadOnly="True" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+
+                            <DataGridTextColumn Header="Transaction ID"  IsReadOnly="True" Binding="{Binding CI_ReceiptID }"/>
+                            <DataGridTextColumn Header="Barcode"  IsReadOnly="True"  Binding="{Binding CI_Barcode }"/>
+                            <DataGridTextColumn Header="Item Name"  IsReadOnly="True" Binding="{Binding CI_ItemName }"/>
+                            <DataGridTextColumn Header="Price"  IsReadOnly="True" Binding="{Binding CI_Price }"/>
+                            <DataGridTextColumn Header="Qty"   IsReadOnly="True" Binding="{Binding CI_Qty }"/>
+                            <DataGridTextColumn Header="Total Price" IsReadOnly="True" Binding="{Binding CI_Total }"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </StackPanel>
             </Border>
-
-
             <StackPanel Margin="20,10,20,20">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Date: " FontSize="20"/>
@@ -81,41 +112,44 @@
 
                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                     <TextBlock Text="Discount (%): " FontSize="20"/>
-                    <TextBox  Margin="56,0,0,0" Width="150"/>
+                    <TextBox x:Name="textBoxDiscount"    TextChanged="textBoxDiscount_TextChanged" FontSize="20" Margin="56,0,0,0" Width="150"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                    <TextBlock Text="Discounted Price: " FontSize="20"/>
-                    <TextBox Margin="22,0,0,0" Width="150"/>
+                    <TextBlock x:Name="tb" Text="Discounted Price: "  FontSize="20"/>
+                    <TextBox x:Name="textBoxDiscountedPrice" Text="0" FontSize="20" Margin="22,0,0,0" Width="150" IsEnabled="False"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                     <TextBlock Text="Total Amount: " FontSize="20"/>
-                    <TextBox Margin="49,0,0,0" Width="150"/>
+                    <TextBox x:Name="textBoxAmount" Text="0" FontSize="20" Margin="49,0,0,0" IsEnabled="False"  Width="150"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                     <TextBlock Text="Customer Payment: " FontSize="20"/>
-                    <TextBox Margin="4,0,0,0" Width="150"/>
+                    <TextBox x:Name="textBoxPayment" TextChanged="textBoxPayment_TextChanged" FontSize="20" Margin="4,0,0,0" Width="150"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                     <TextBlock Text="Customer Change: " FontSize="20"/>
-                    <TextBox Margin="14,0,0,0" Width="150"/>
+                    <TextBox x:Name="textBoxChange" Margin="14,0,0,0" Width="150" FontSize="20" IsEnabled="False"/>
                 </StackPanel>
 
             </StackPanel>
-
             <StackPanel Margin="20,20,20,20" VerticalAlignment="Top">
-                <Button Width="120" FontSize="20" Content="Checkout"/>
-                <Button Margin="0,20,0,0" Width="120" FontSize="20" Content="Clear Items"/>
+                <Button x:Name="buttonCheckOut" Width="120" FontSize="20" Content="Checkout" Click="buttonCheckOut_Click"/>
+                <Button x:Name="buttonClear" Click="buttonClear_Click" Margin="0,20,0,0" Width="120" FontSize="20" Content="Clear Items"/>
 
                 <Button Margin="0,90,0,0" Width="100" FontSize="20" Content="Logout"/>
             </StackPanel>
-            
+
         </StackPanel>
-        
-        
-        
+
+
+
     </Grid>
+
+
+
+
 </Window>

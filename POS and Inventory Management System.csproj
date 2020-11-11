@@ -58,6 +58,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\Brands.cs" />
+    <Compile Include="Classes\CartItem.cs" />
+    <Compile Include="Classes\Receipt.cs" />
     <Compile Include="Classes\StockInProducts.cs" />
     <Compile Include="Classes\TempStockInProducts.cs" />
     <Compile Include="Classes\Users.cs" />

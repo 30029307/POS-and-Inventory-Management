@@ -86,7 +86,6 @@
                         <StackPanel>
                             <TextBlock Text="Search Product via Desc: "/>
                             <TextBox x:Name="textBoxSearchPName" TextChanged="textBoxSearchPName_TextChanged" Width="150" HorizontalAlignment="Left"></TextBox>
-
                         </StackPanel>
 
 
