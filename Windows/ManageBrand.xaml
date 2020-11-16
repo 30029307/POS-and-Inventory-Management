@@ -127,7 +127,7 @@
         </StackPanel>
 
 
-        <DataGrid  x:Name="dataGridBrand" Width="auto" Background="#E6E5E5" Cursor="UpArrow" ColumnWidth="*" SelectionChanged="dataGridBrand_SelectionChanged" IsReadOnly="True" Grid.ColumnSpan="2" Margin="428,0,-0.4,-0.2"/>
+        <DataGrid  x:Name="dataGridBrand" Width="auto" Background="GhostWhite" Cursor="UpArrow" ColumnWidth="*" SelectionChanged="dataGridBrand_SelectionChanged" IsReadOnly="True" Grid.ColumnSpan="2" Margin="428,0,-0.4,-0.2"/>
 
 
     </Grid>

@@ -97,24 +97,22 @@ namespace POS_and_Inventory_Management_System
             }
             else
             {
-                this.Close();
-                main.Show();
-                main.usernameDisplay.Content = userQuery.Username;
-                main.roleDisplay.Content = userQuery.RoleName;
-                App.loginName = userQuery.Fullname;
+               
 
                 if (userQuery.RoleName == "Cashier") {
                     main.stackPanelBrand.Visibility = Visibility.Collapsed;
                     main.stackPanelCategory.Visibility = Visibility.Collapsed;
                     main.stackPanelProduct.Visibility = Visibility.Collapsed;
                     main.stackPanelStock.Visibility = Visibility.Collapsed;
-                    main.stackPanelUser.Visibility = Visibility.Collapsed;                  
+                    main.stackPanelUser.Visibility = Visibility.Collapsed;
+                    main.userImage.Source = new BitmapImage(new Uri("Assets/cashierIcon.PNG",UriKind.Relative));
                 }
                 else if (userQuery.RoleName == "Inventory")
                 {
                     
                     main.stackPanelUser.Visibility = Visibility.Collapsed;
                     main.stackPanelPOS.Visibility = Visibility.Collapsed;
+                    main.userImage.Source = new BitmapImage(new Uri("Assets/inventoryIcon.PNG", UriKind.Relative));
                 }
                 else if (userQuery.RoleName == "Admin" || userQuery.RoleName == "Manager")
                 {
@@ -124,7 +122,14 @@ namespace POS_and_Inventory_Management_System
                     main.stackPanelStock.Visibility = Visibility.Visible;
                     main.stackPanelUser.Visibility = Visibility.Visible;
                     main.stackPanelPOS.Visibility = Visibility.Visible;
+                    main.userImage.Source = new BitmapImage(new Uri("Assets/adminIcon.PNG", UriKind.Relative));
                 }
+
+                this.Close();
+                main.Show();
+                main.usernameDisplay.Content = userQuery.Fullname;
+                main.roleDisplay.Content = userQuery.RoleName;
+                App.loginName = userQuery.Fullname;
 
 
 

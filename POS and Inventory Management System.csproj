@@ -185,5 +185,19 @@
   <ItemGroup>
     <Resource Include="Assets\gray.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\adminIcon.PNG" />
+    <Resource Include="Assets\cashierIcon.PNG" />
+    <Resource Include="Assets\categoryIcon.PNG" />
+    <Resource Include="Assets\inventoryIcon.PNG" />
+    <Resource Include="Assets\posIcon.PNG" />
+    <Resource Include="Assets\productIcon.PNG" />
+    <Resource Include="Assets\stockIcon.PNG" />
+    <Resource Include="Assets\supplierIcon.PNG" />
+    <Resource Include="Assets\userIcon.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\logouticon.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

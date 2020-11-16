@@ -59,11 +59,10 @@ namespace POS_and_Inventory_Management_System
 
         private void logout_Click(object sender, RoutedEventArgs e)
         {
-            //;
-            this.Close();
 
             Login loginPage = new Login();
-            loginPage.ShowDialog();
+            loginPage.Show();
+            this.Close();
         }
 
         private void manageStock_Click(object sender, RoutedEventArgs e)

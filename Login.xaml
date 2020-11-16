@@ -75,8 +75,8 @@
         <Border CornerRadius="0" Grid.Column="1">
             <Border.Background>
                 <LinearGradientBrush>
-                    <GradientStop Color="#80F7B901" Offset="0.01"/>
-                    <GradientStop Color="#F18701" Offset="1"/>
+                    <GradientStop Color="#80F71301" Offset="0.01"/>
+                    <GradientStop Color="#FFF10101" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
 
