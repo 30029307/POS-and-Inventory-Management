@@ -34,9 +34,12 @@ namespace POS_and_Inventory_Management_System.Windows
         
         List<CartItem> cartItems = new List<CartItem>();
 
+        string letters = "qwertyuiopasdfghjklzxcvbnm";
+
 
         public POS()
         {
+
             InitializeComponent();
             datePickerDateIssued.SelectedDate = DateTime.Now;
             cn = new SqlConnection(dbCon.Connection());
@@ -116,7 +119,7 @@ namespace POS_and_Inventory_Management_System.Windows
             dt.Clear();
 
             dt.Columns.Add("PCode");
-            dt.Columns.Add("Barcode");
+           
             dt.Columns.Add("PDesc");
             dt.Columns.Add("Price");
             dt.Columns.Add("Qty");
@@ -126,7 +129,7 @@ namespace POS_and_Inventory_Management_System.Windows
             foreach (StockInProducts s in stocks)
             {
 
-                dt.Rows.Add(s.PCode,s.Barcode, s.PDesc, s.Price, s.Qty);
+                dt.Rows.Add(s.PCode, s.PDesc, s.Price, s.Qty);
 
             }
 
@@ -144,9 +147,7 @@ namespace POS_and_Inventory_Management_System.Windows
 
            
 
-            buttonAddToCart.IsEnabled = true;
-
-           
+            buttonAddToCart.IsEnabled = true; 
 
             var dg = sender as DataGrid;
            
@@ -154,11 +155,11 @@ namespace POS_and_Inventory_Management_System.Windows
 
             if (item != null) {
                 textBlockPCode.Text = item.Row[0].ToString();
-                textBlockBarcode.Text = item.Row[1].ToString();
-                textBlockItemName.Text = item.Row[2].ToString();
-                textBoxPrice.Text = item.Row[3].ToString();
+              
+                textBlockItemName.Text = item.Row[1].ToString();
+                textBoxPrice.Text = item.Row[2].ToString();
                 textBoxQty.Text = "1";
-                textBlockTotal.Text = item.Row[4].ToString();
+                textBlockTotal.Text = item.Row[3].ToString();
 
             }
 
@@ -208,7 +209,7 @@ namespace POS_and_Inventory_Management_System.Windows
             {
                 cartItems.Add(new CartItem
                 {
-                    CI_Barcode = textBlockBarcode.Text,
+                    //CI_Barcode = textBlockBarcode.Text,
                     CI_ItemName = textBlockItemName.Text,
                     CI_Price = Double.Parse(textBoxPrice.Text),
                     CI_Qty = Int32.Parse(textBoxQty.Text),
@@ -237,7 +238,7 @@ namespace POS_and_Inventory_Management_System.Windows
             dt.Columns.Remove("PCode");
             dt.Columns.Remove("PDesc");
             dt.Columns.Remove("Qty");
-            dt.Columns.Remove("Barcode");
+           
             dt.Columns.Remove("Price");
             dataGridLoadProducts.Items.Refresh();
 
@@ -246,7 +247,7 @@ namespace POS_and_Inventory_Management_System.Windows
 
         private void Reset() {
 
-            textBlockBarcode.Text = "";
+            //textBlockBarcode.Text = "";
             textBlockItemName.Text = "";
             textBoxPrice.Text = "";
             textBoxQty.Text = "";
@@ -287,6 +288,7 @@ namespace POS_and_Inventory_Management_System.Windows
 
 
         private void GetDiscount() {
+
             var percent = Double.Parse(textBoxDiscount.Text) * 0.01d;
             var originalAmount = Double.Parse(textBoxAmount.Text);
             var discountedPrice = percent * originalAmount;
@@ -303,7 +305,19 @@ namespace POS_and_Inventory_Management_System.Windows
         {
             if (textBoxDiscount.Text != "")
             {
-                this.GetDiscount();
+                if (!textBoxDiscount.Text.Contains(letters)) {
+
+                    try
+                    {
+                        this.GetDiscount();
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("Input numbers only.");
+                    }
+                }
+            
             }
             else {
                 textBoxDiscountedPrice.Text = 0.ToString();
@@ -322,18 +336,36 @@ namespace POS_and_Inventory_Management_System.Windows
             if (textBoxPayment.Text != "")
             {
 
-                var customerPayment = Double.Parse(textBoxPayment.Text);
-                var discountedAmount = Double.Parse(textBoxDiscountedPrice.Text);
-                var totalAmount = Double.Parse(textBoxAmount.Text);
-                var customerChange = 0d;
+                if (!textBoxDiscount.Text.Contains(letters))
+                {
+
+                    try
+                    {
+                        var customerPayment = Double.Parse(textBoxPayment.Text);
+                        var discountedAmount = Double.Parse(textBoxDiscountedPrice.Text);
+                        var totalAmount = Double.Parse(textBoxAmount.Text);
+                        var customerChange = 0d;
 
 
-                if (textBoxDiscount.Text == "") customerChange = customerPayment - totalAmount;
-                else customerChange = customerPayment - discountedAmount;
+                        if (textBoxDiscount.Text == "") customerChange = customerPayment - totalAmount;
+                        else customerChange = customerPayment - discountedAmount;
 
 
 
-                textBoxChange.Text = customerChange.ToString();
+                        textBoxChange.Text = customerChange.ToString();
+
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("Input numbers only.");
+                    }
+                }
+
+
+
+
+              
             }
             else {
                 textBoxChange.Text = 0.ToString();
@@ -351,7 +383,7 @@ namespace POS_and_Inventory_Management_System.Windows
             foreach (CartItem cartItem  in cartItems) {
 
                 com.Parameters.AddWithValue("CQty", cartItem.CI_Qty);
-                com.Parameters.AddWithValue("CBarcode", cartItem.CI_Barcode);
+                com.Parameters.AddWithValue("CBarcode", 0);
                 com.Parameters.AddWithValue("CItemName", cartItem.CI_ItemName);
                 com.Parameters.AddWithValue("CPrice", cartItem.CI_Price);
                 com.Parameters.AddWithValue("CTotal", cartItem.CI_Total);
@@ -412,16 +444,18 @@ namespace POS_and_Inventory_Management_System.Windows
 
         private void buttonCheckOut_Click(object sender, RoutedEventArgs e)
         {
+
+           
+
             int payment = Int32.Parse(textBoxPayment.Text);
-            int price = Int32.Parse(textBoxDiscountedPrice.Text);
+            double price = Double.Parse(textBoxDiscountedPrice.Text);
 
-
-
-
-            if (payment >= price)
+            if (payment >= price && payment != 0)
             {
                 if (cartItems.Count > 0)
                 {
+                    
+
                     string sql = "Insert INTO CartItem(Barcode,ItemName,Price,Qty,Total,ReceiptID) Values (@CBarcode ,@CItemName,@CPrice,@CQty,@CTotal,@CReceiptId); " +
                                  "UPDATE Product SET Qty = Qty - @CQty WHERE PCode = @CPCode ";
 

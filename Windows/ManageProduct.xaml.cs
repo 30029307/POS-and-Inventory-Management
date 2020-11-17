@@ -56,7 +56,7 @@ namespace POS_and_Inventory_Management_System.Windows
             dt.Clear();
 
             SqlCommand com = cn.CreateCommand();
-            com.CommandText = "select p.PCode, p.Barcode, p.PDesc, b.Name as BrandName, c.Name as CategoryName, p.Price, p.Qty from Product as p inner join Brand as b on b.Id = p.BrandId inner join Category as c on c.Id = p.CategoryId  where p.PDesc like '%' ";
+            com.CommandText = "select p.PCode, p.PDesc, b.Name as BrandName, c.Name as CategoryName, p.Price from Product as p inner join Brand as b on b.Id = p.BrandId inner join Category as c on c.Id = p.CategoryId  where p.PDesc like '%' ";
             com.CommandType = CommandType.Text;
 
             SqlDataReader read = com.ExecuteReader();
@@ -74,10 +74,10 @@ namespace POS_and_Inventory_Management_System.Windows
             {
 
                 textBoxProductCode.Text = row["PCode"].ToString();
-                textBoxBarCode.Text = row["Barcode"].ToString();
+               // textBoxBarCode.Text = row["Barcode"].ToString();
                 textBoxDesc.Text = row["PDesc"].ToString();
                 textBoxPrice.Text = row["Price"].ToString();
-                textBoxQty.Text = row["Qty"].ToString();
+                //textBoxQty.Text = row["Qty"].ToString();
                 comboBoxBrand.Text = row["BrandName"].ToString();
                 comboBoxCategory.Text = row["CategoryName"].ToString();
             }
@@ -87,6 +87,7 @@ namespace POS_and_Inventory_Management_System.Windows
             buttonAddProduct.IsEnabled = false;
             buttonUpdateProduct.IsEnabled = true;
             buttonDeleteProduct.IsEnabled = true;
+
 
         }
         private void AddUpdateDelete(string sqlStatement, string state) {
@@ -101,7 +102,7 @@ namespace POS_and_Inventory_Management_System.Windows
             if (state == "Add" || state == "Update")
             {
                 com.Parameters.Add("PCode", SqlDbType.VarChar, 50).Value = textBoxProductCode.Text;
-                com.Parameters.Add("Barcode", SqlDbType.VarChar, 50).Value = textBoxBarCode.Text;
+                com.Parameters.Add("Barcode", SqlDbType.VarChar, 50).Value = 0;
                 com.Parameters.Add("PDesc", SqlDbType.VarChar, 255).Value = textBoxDesc.Text;
                 com.Parameters.Add("BrandId", SqlDbType.Int, 4).Value = GetBrandID();
                 com.Parameters.Add("CategoryId", SqlDbType.Int, 4).Value = GetCategoryID();
@@ -114,7 +115,7 @@ namespace POS_and_Inventory_Management_System.Windows
 
                     MessageBox.Show("(Price) : Please input a valid decimal value.");
                 }
-                com.Parameters.Add("Qty", SqlDbType.Int, 4).Value = Int32.Parse(textBoxQty.Text);
+                com.Parameters.Add("Qty", SqlDbType.Int, 4).Value = 0;
 
                 if (state == "Add") msg = "Data Inserted Successfully";
                 else if (state == "Update") msg = "Data Updated Successfully";
@@ -154,10 +155,9 @@ namespace POS_and_Inventory_Management_System.Windows
             }
             else {
 
-                if (textBoxProductCode.Text != "" &&
-                        textBoxBarCode.Text != "" &&
+                if (textBoxProductCode.Text != "" &&                       
                         textBoxPrice.Text != "" &&
-                        textBoxQty.Text != "" &&
+                        
                         textBoxDesc.Text != "" &&
                         comboBoxBrand.Text != "" &&
                         comboBoxCategory.Text != "")
@@ -221,7 +221,7 @@ namespace POS_and_Inventory_Management_System.Windows
         private void buttonUpdateProduct_Click(object sender, RoutedEventArgs e)
         {
 
-            string sql = "UPDATE Product SET PCode = @PCode, Barcode = @Barcode, PDesc = @PDesc, BrandId = @BrandId, CategoryId = @CategoryId, Price = @Price, Qty = @Qty WHERE PCode = @PCode" ;
+            string sql = "UPDATE Product SET PCode = @PCode, PDesc = @PDesc, BrandId = @BrandId, CategoryId = @CategoryId, Price = @Price, Qty = @Qty WHERE PCode = @PCode" ;
             this.AddUpdateDelete(sql,"Update");
             this.InitializedButtonState();
         }
@@ -294,9 +294,9 @@ namespace POS_and_Inventory_Management_System.Windows
         private void Clear() {
 
             textBoxProductCode.Text = "";
-            textBoxBarCode.Text = "";
+            //textBoxBarCode.Text = "";
             textBoxPrice.Text = "";
-            textBoxQty.Text = "";
+            //textBoxQty.Text = "";
             textBoxDesc.Text = "";
             comboBoxBrand.Text = null;
             comboBoxCategory.Text = null;

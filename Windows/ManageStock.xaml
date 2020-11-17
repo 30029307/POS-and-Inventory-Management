@@ -104,7 +104,7 @@
                     <TextBlock Text="Products" FontSize="20"/>
                 </GroupBox.Header>
                 <StackPanel >
-                    <DataGrid AutoGenerateColumns="True" IsReadOnly="True" Height="auto" x:Name="dataGridProduct" ColumnWidth="*" MouseDoubleClick="dataGridProduct_MouseDoubleClick" >
+                    <DataGrid ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" AutoGenerateColumns="True" IsReadOnly="True" Height="auto" x:Name="dataGridProduct" ColumnWidth="*" MouseDoubleClick="dataGridProduct_MouseDoubleClick" >
 
                     </DataGrid>
                 </StackPanel>
@@ -121,7 +121,7 @@
                 <GroupBox.Header>
                     <TextBlock Text="Products" FontSize="20" />
                 </GroupBox.Header>
-                <DataGrid x:Name="dataGridTemporaryProduct" Height="250" ColumnWidth="*" MouseDoubleClick="dataGridTemporaryProduct_MouseDoubleClick" IsReadOnly="True" AutoGenerateColumns="False">
+                <DataGrid ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" x:Name="dataGridTemporaryProduct" Height="250" ColumnWidth="*" MouseDoubleClick="dataGridTemporaryProduct_MouseDoubleClick" IsReadOnly="True" AutoGenerateColumns="False">
                     <DataGrid.Columns>
 
                         <DataGridTextColumn Header="Reference Code" Width="100" IsReadOnly="True" Binding="{Binding TRefCode }"/>

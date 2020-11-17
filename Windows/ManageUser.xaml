@@ -21,7 +21,7 @@
 
     
         <StackPanel Margin="20" Grid.Column="0" Grid.ColumnSpan="2">
-                 <DataGrid SelectionChanged="dataGridUser_SelectionChanged" x:Name="dataGridUser" Margin="10" Height="300" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionChanged="dataGridUser_SelectionChanged" x:Name="dataGridUser" Margin="10" Height="300" AutoGenerateColumns="False" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="User ID:" Binding="{Binding UserId}" Width="*" IsReadOnly="True"/>
                     <DataGridTextColumn Header="Username:" Binding="{Binding Username}" Width="*"  IsReadOnly="True"/>

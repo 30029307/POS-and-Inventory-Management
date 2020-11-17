@@ -15,7 +15,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.7*"/>
         </Grid.RowDefinitions>
 
        
@@ -41,10 +41,10 @@
                             <TextBox  Margin="10,0,0,0" x:Name="textBoxProductCode" Width="200" Height="25" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center"/>
                         </StackPanel>
 
-                        <StackPanel Orientation="Horizontal " Margin="10,10,0,0" >
+                        <!--<StackPanel Orientation="Horizontal " Margin="10,10,0,0" >
                             <TextBlock x:Name="textBlockBarCode" Text="Barcode:" FontSize="16"/>
                             <TextBox  Margin="45,0,0,0" x:Name="textBoxBarCode" Width="200" Height="25" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center"/>
-                        </StackPanel>
+                        </StackPanel>-->
 
                         <StackPanel Orientation="Horizontal " Margin="10,10,0,0" >
                             <TextBlock x:Name="textBlockBrand" Text="Brand:" FontSize="16"/>
@@ -60,10 +60,10 @@
                             <TextBlock x:Name="textBlockPrice" Text="Price:" FontSize="16"/>
                             <TextBox  Margin="66,0,0,0" x:Name="textBoxPrice" Width="200" Height="25" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center"/>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal " Margin="10,10,0,0" >
+                        <!--<StackPanel Orientation="Horizontal " Margin="10,10,0,0" >
                             <TextBlock x:Name="textBlockQty" Text="Qty:" FontSize="16"/>
                             <TextBox  Margin="75,0,0,0" x:Name="textBoxQty" Width="200" Height="25" PreviewTextInput="NumberValidation" HorizontalContentAlignment="Left"  VerticalContentAlignment="Center"/>
-                        </StackPanel>
+                        </StackPanel>-->
                         <Button x:Name="buttonClear"  HorizontalAlignment="Left" Margin="20,0,0,0" Content="Clear" FontSize="12" Width="50" Height="20"  IsEnabled="True" Click="buttonClear_Click" />
 
 
@@ -108,7 +108,7 @@
                 </StackPanel>
 
 
-                <DataGrid x:Name="dataGridProduct" ColumnWidth="*" SelectionChanged="dataGridProduct_SelectionChanged">
+                <DataGrid ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" x:Name="dataGridProduct" ColumnWidth="*" SelectionChanged="dataGridProduct_SelectionChanged">
 
                 </DataGrid>
 
