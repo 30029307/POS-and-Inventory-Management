@@ -108,7 +108,7 @@
                 </StackPanel>
 
 
-                <DataGrid ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" x:Name="dataGridProduct" ColumnWidth="*" SelectionChanged="dataGridProduct_SelectionChanged">
+                <DataGrid ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" x:Name="dataGridProduct" Height="310" ColumnWidth="*" SelectionChanged="dataGridProduct_SelectionChanged">
 
                 </DataGrid>
 

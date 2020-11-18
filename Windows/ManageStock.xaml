@@ -99,12 +99,12 @@
             </StackPanel>
 
 
-            <GroupBox BorderThickness="2" BorderBrush="Gray" Margin="10">
+            <GroupBox BorderThickness="2" BorderBrush="Gray" Margin="10" Height="200">
                 <GroupBox.Header>
                     <TextBlock Text="Products" FontSize="20"/>
                 </GroupBox.Header>
                 <StackPanel >
-                    <DataGrid ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" AutoGenerateColumns="True" IsReadOnly="True" Height="auto" x:Name="dataGridProduct" ColumnWidth="*" MouseDoubleClick="dataGridProduct_MouseDoubleClick" >
+                    <DataGrid  ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" AutoGenerateColumns="True" IsReadOnly="True" Height="170" x:Name="dataGridProduct" ColumnWidth="*" MouseDoubleClick="dataGridProduct_MouseDoubleClick" >
 
                     </DataGrid>
                 </StackPanel>

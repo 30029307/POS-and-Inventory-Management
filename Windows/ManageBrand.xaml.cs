@@ -75,8 +75,17 @@ namespace POS_and_Inventory_Management_System.Windows
                 case "Add":
                     msg = "Data Inserted Successfully!";
                     com.Parameters.Add("Name",SqlDbType.VarChar,50).Value = textBoxBRandName.Text;
-                    com.Parameters.Add("Address", SqlDbType.VarChar, 50).Value = textBoxAddress.Text;                 
-                    com.Parameters.Add("Contact", SqlDbType.Int, 4).Value = Int32.Parse(textBoxContactNumber.Text);                
+                    com.Parameters.Add("Address", SqlDbType.VarChar, 50).Value = textBoxAddress.Text;
+
+                    try
+                    {
+                        com.Parameters.Add("Contact", SqlDbType.Int, 4).Value = Int32.Parse(textBoxContactNumber.Text);
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("eh");
+                    }                
                     com.Parameters.Add("Email", SqlDbType.VarChar, 50).Value = textBoxBRandName.Text;                  
                     break;
                 case "Update":

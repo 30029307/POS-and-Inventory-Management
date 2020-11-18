@@ -161,7 +161,7 @@
 
 
 
-            <DataGrid x:Name="dataGridBrand" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible"  Grid.Row="0" Width="auto" Height="auto" Cursor="UpArrow" ColumnWidth="*" Margin="0,0,0,0" SelectionChanged="dataGridBrand_SelectionChanged" IsReadOnly="True">
+            <DataGrid x:Name="dataGridBrand" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible"  Grid.Row="0" Width="auto" Height="260" Cursor="UpArrow" ColumnWidth="*" Margin="0,0,0,0" SelectionChanged="dataGridBrand_SelectionChanged" IsReadOnly="True">
             </DataGrid>
 
 
