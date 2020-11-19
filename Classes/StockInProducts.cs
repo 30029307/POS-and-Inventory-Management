@@ -8,7 +8,7 @@ namespace POS_and_Inventory_Management_System.Classes
 {
     class StockInProducts
     {
-        public int PCode { get; set; }
+        public string PCode { get; set; }
         public string Barcode { get; set; }
 
         public string PDesc { get; set; }

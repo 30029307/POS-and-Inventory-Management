@@ -100,7 +100,7 @@ namespace POS_and_Inventory_Management_System.Windows
             while (read.Read()) {
 
                 stocks.Add( new StockInProducts {
-                    PCode = Int32.Parse(read[0].ToString()),
+                    PCode = read[0].ToString(),
                     Barcode = read[1].ToString(),
                     PDesc = read[2].ToString(),
                     BrandID = Int32.Parse(read[3].ToString()),
