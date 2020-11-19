@@ -56,3 +56,4 @@ C:\Users\Derick\source\repos\POS and Inventory Management System\bin\Debug\POS a
 C:\Users\Derick\source\repos\POS and Inventory Management System\bin\Debug\POS and Inventory Management System.application
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\POS and Inventory Management System.exe.manifest
 C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\POS and Inventory Management System.application
+C:\Users\Derick\source\repos\POS and Inventory Management System\obj\Debug\POS and Inventory Management System.csprojAssemblyReference.cache

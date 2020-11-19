@@ -244,6 +244,7 @@ namespace POS_and_Inventory_Management_System.Windows
                              "UPDATE Product SET Qty = Qty + @TQty WHERE PCode = @TPCode ";
                 this.InsertUpdateData(sql);
                 this.ClearStockProducts();
+                this.ClearTempProducts();
                 this.UpdateGridProducts();
 
 

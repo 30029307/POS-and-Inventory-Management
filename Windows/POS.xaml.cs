@@ -215,7 +215,7 @@ namespace POS_and_Inventory_Management_System.Windows
                     CI_Qty = Int32.Parse(textBoxQty.Text),
                     CI_ReceiptID = Int32.Parse(textBlockReceiptNo.Text),
                     CI_Total = Double.Parse(textBlockTotal.Text),
-                    CI_PCode = Int32.Parse(textBlockPCode.Text)
+                    CI_PCode = textBlockPCode.Text
                 });
 
 
@@ -492,7 +492,7 @@ namespace POS_and_Inventory_Management_System.Windows
 
         private void textBoxSearchItem_TextChanged(object sender, TextChangedEventArgs e)
         {
-            dv.RowFilter = string.Format("Barcode LIKE '%{0}%'", textBoxSearchItem.Text);
+            dv.RowFilter = string.Format("PCode LIKE '%{0}%'", textBoxSearchItem.Text);
             dataGridLoadProducts.ItemsSource = dv;
         }
     }

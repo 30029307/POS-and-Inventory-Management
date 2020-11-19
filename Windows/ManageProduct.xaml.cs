@@ -221,7 +221,7 @@ namespace POS_and_Inventory_Management_System.Windows
         private void buttonUpdateProduct_Click(object sender, RoutedEventArgs e)
         {
 
-            string sql = "UPDATE Product SET PCode = @PCode, PDesc = @PDesc, BrandId = @BrandId, CategoryId = @CategoryId, Price = @Price, Qty = @Qty WHERE PCode = @PCode" ;
+            string sql = "UPDATE Product SET PCode = @PCode, PDesc = @PDesc, BrandId = @BrandId, CategoryId = @CategoryId, Price = @Price, Qty = @Qty WHERE PCode = @PCode";
             this.AddUpdateDelete(sql,"Update");
             this.InitializedButtonState();
         }

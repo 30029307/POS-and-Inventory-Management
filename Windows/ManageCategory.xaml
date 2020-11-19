@@ -93,17 +93,17 @@
 
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,20">
                                 <TextBlock x:Name="labelSearchName" Text="Name: " FontSize="15"/>
-                                <TextBox x:Name="textBoxSearchName" Width="100" Height="20"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="textBoxSearchName_TextChanged"/>
+                                <TextBox x:Name="textBoxSearchName" Width="100"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="textBoxSearchName_TextChanged"/>
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,20">
                                 <TextBlock x:Name="labelSearchType" Text="Type: " FontSize="15"/>
-                                <TextBox x:Name="textBoxSearchType" Width="100" Height="20"   HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="textBoxSearchType_TextChanged"/>
+                                <TextBox x:Name="textBoxSearchType" Width="100"    HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="textBoxSearchType_TextChanged"/>
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20,0,0,20">
                                 <TextBlock x:Name="labelSearchUnit" Text="Unit: " FontSize="15"/>
-                                <TextBox x:Name="textBoxSearchUnit" Width="100" Height="20"   HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="textBoxSearchUnit_TextChanged"/>
+                                <TextBox x:Name="textBoxSearchUnit" Width="100"    HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="textBoxSearchUnit_TextChanged"/>
                             </StackPanel>
 
 

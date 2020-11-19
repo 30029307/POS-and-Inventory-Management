@@ -15,7 +15,7 @@ namespace POS_and_Inventory_Management_System.Classes
         public double CI_Price { get; set; }
         public int CI_Qty { get; set; }
 
-        public int  CI_PCode { get; set; }
+        public string  CI_PCode { get; set; }
         public double CI_Total { get; set; }
       
 

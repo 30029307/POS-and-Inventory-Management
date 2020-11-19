@@ -59,11 +59,15 @@
                 <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left">
 
 
-                    
+                    <StackPanel x:Name="stackPanelBrand" Orientation="Horizontal"  Margin="20,15,0,0">
+                        <Image Source="Assets/supplierIcon.PNG" Width="30" Height="30" />
+                        <Button x:Name="manageBrandButton"  Content="Manage Brand" Click="manageBrandButton_Click" >
+                        </Button>
+                    </StackPanel>
 
-                    <StackPanel x:Name="stackPanelPOS" Orientation="Horizontal" Margin="20,15,0,0">
-                        <Image Source="Assets/posIcon.PNG" Width="30" Height="30" />
-                        <Button Click="managePOS_Click" Content="Manage Sales"  >
+                    <StackPanel x:Name="stackPanelCategory" Orientation="Horizontal"  Margin="20,15,0,0">
+                        <Image Source="Assets/categoryIcon.PNG" Width="30" Height="30" />
+                        <Button x:Name="manageCategory"   Content="Manage Category" Click="manageCategory_Click" >
                         </Button>
                     </StackPanel>
 
@@ -72,16 +76,7 @@
                         <Button x:Name="manageProduct"  Content="Manage Product"  Click="manageProduct_Click" >
                         </Button>
                     </StackPanel>
-                    <StackPanel x:Name="stackPanelCategory" Orientation="Horizontal"  Margin="20,15,0,0">
-                        <Image Source="Assets/categoryIcon.PNG" Width="30" Height="30" />
-                        <Button x:Name="manageCategory"   Content="Manage Category" Click="manageCategory_Click" >
-                        </Button>
-                    </StackPanel>
-                    <StackPanel x:Name="stackPanelBrand" Orientation="Horizontal"  Margin="20,15,0,0">
-                        <Image Source="Assets/supplierIcon.PNG" Width="30" Height="30" />
-                        <Button x:Name="manageBrandButton"  Content="Manage Brand" Click="manageBrandButton_Click" >
-                        </Button>
-                    </StackPanel>
+
 
                     <StackPanel x:Name="stackPanelStock" Orientation="Horizontal"  Margin="20,15,0,0">
                         <Image Source="Assets/stockIcon.PNG" Width="30" Height="30" />
@@ -89,6 +84,18 @@
                         </Button>
                     </StackPanel>
 
+
+
+                    <StackPanel x:Name="stackPanelPOS" Orientation="Horizontal" Margin="20,15,0,0">
+                        <Image Source="Assets/posIcon.PNG" Width="30" Height="30" />
+                        <Button Click="managePOS_Click" Content="Point Of Sale"  >
+                        </Button>
+                    </StackPanel>
+
+                 
+                   
+
+                  
                    
                  
                     <StackPanel x:Name="stackPanelUser" Orientation="Horizontal"  Margin="20,15,0,0">
